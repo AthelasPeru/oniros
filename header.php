@@ -22,4 +22,4 @@
 
 </head>
 
-<body class="<?php if(isset($page)){ echo $page; }; ?>">
+<body <?php body_class(); ?>>
