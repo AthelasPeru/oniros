@@ -1,7 +1,8 @@
 <?php
 
 //Para los thumbnails
-function athelas_thumbnail($image_field, $image_size, $classes=array('')){
+function athelas_thumbnail($image_field, $image_size, $classes=array(''), $ID=null){
+
 	
 	if (!function_exists('get_all_classes')) {
 		function get_all_classes($classes, $height, $width, $image_size){
@@ -13,11 +14,18 @@ function athelas_thumbnail($image_field, $image_size, $classes=array('')){
 			return $all_classes;
 		};
 	}
-	if( get_field($image_field) ){
+	if( get_field($image_field ) ){
 		$image = get_field($image_field);
-	}elseif ( get_sub_field($image_field) ) {
+	}elseif ( get_sub_field($image_field ) ) {
 		$image = get_sub_field($image_field);
-	}else {
+	}
+	elseif ( get_sub_field($image_field, $ID ) ) {
+		$image = get_sub_field($image_field, $ID);
+	}
+	elseif ( get_field($image_field , $ID) ) {
+		$image = get_field($image_field, $ID);
+	}
+	else {
 		$image_class = get_all_classes($classes, 'placeholder', 'placeholder', $image_size);
 		echo '<img class="'.$image_class.'" src="'. get_stylesheet_directory_uri().'/bgimage/'.$image_size.'.jpg" alt"placeholder"/>';
 	}
@@ -44,6 +52,7 @@ function athelas_thumbnail($image_field, $image_size, $classes=array('')){
 		//}
 	};
 };
+
 
 
 
