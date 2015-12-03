@@ -1,28 +1,28 @@
 <?php
 
-add_action( 'init', 'athelas_register_product' );
-function athelas_register_product() {
+add_action( 'init', 'athelas_register_routes' );
+function athelas_register_routes() {
 	$labels = array(
-		"name" => "Products",
-		"singular_name" => "Product",
-		"menu_name" => "Products",
-		"all_items" => "All Products",
-		"add_new" => "Add new",
-		"add_new_item" => "Add new Product",
+		"name" => "Rutas",
+		"singular_name" => "Ruta",
+		"menu_name" => "Rutas",
+		"all_items" => "todas las Rutas",
+		"add_new" => "agregar nueva Ruta",
+		"add_new_item" => "agregar nueva Ruta",
 		"edit" => "Editar",
-		"edit_item" => "Edit Product",
-		"new_item" => "New Product",
-		"view" => "view",
-		"view_item" => "See Product",
-		"search_items" => "Search Products",
-		"not_found" => "Products not found",
-		"not_found_in_trash" => "Products not found in the trash",
+		"edit_item" => "Editar Ruta",
+		"new_item" => "Nueva Ruta",
+		"view" => "ver",
+		"view_item" => "ver Ruta",
+		"search_items" => "Buscar Rutas",
+		"not_found" => "Rutas no encontradas",
+		"not_found_in_trash" => "Rutas no encontradas en la papelera",
 		);
 
 	$args = array(
 		"labels" => $labels,
-		"description" => "Post type Products",
-		'taxonomies' => array('category_products'),
+		"description" => "Post type Rutas",
+		'taxonomies' => array('tipo_rutas'),
 		"public" => true,
 		"show_ui" => true,
 		"has_archive" => true,
@@ -31,11 +31,11 @@ function athelas_register_product() {
 		"capability_type" => "post",
 		"map_meta_cap" => true,
 		"hierarchical" => false,
-		"rewrite" => array( "slug" => "product", "with_front" => true ),
+		"rewrite" => array( "slug" => "rutas", "with_front" => true ),
 		"query_var" => true,
 						"supports" => array( 'title', 'editor','post_tags' ),			
 	);
-	register_post_type( "products", $args );
+	register_post_type( "routes", $args );
 
-}// End of athelas_register_product()
+}// End of athelas_register_routes()
 
