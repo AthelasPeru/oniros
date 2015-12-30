@@ -1,0 +1,24 @@
+#songForm{
+	label{
+		text-transform: uppercase;
+		color:$dark-grey;
+		font-weight: 700;
+	}
+
+	input{
+		background-color: $light-grey;
+		border:none;
+	}
+
+	.send-button{
+		float: right;
+		font-weight: 700;
+	}
+}
+
+
+#talkForm{
+	h5{
+		text-transform: uppercase;
+	}
+}

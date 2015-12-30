@@ -1,0 +1,9 @@
+$main-font-fam: 'Lato', sans-serif;
+
+$title-font-fam: 'Amatic SC', cursive;
+
+@mixin base-font(){
+	font-family: $main-font-fam;
+	font-size: 0.9rem;
+	color: $main-font-color;
+}

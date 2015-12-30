@@ -1,0 +1,76 @@
+.icon-bar{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 14.285714286%;
+	z-index: 999;
+	box-shadow: 1px 0 10px rgba(#000, .5);
+	.item{
+		height: 12.5%;
+		padding: 0 !important;
+		position: relative;
+		@include flexbox;
+		&:nth-child(even){
+			@extend .bg-blue;
+		}
+		&:nth-child(odd){
+			@extend .bg-green;
+		}
+		&:hover, &.active{
+			@extend .bg-red;
+			&:after, &:before{
+				content:" ";
+				display: block;
+				height: 50%;
+				width: 100%;
+				position: absolute;
+				background-color: #c4443b;
+				left: 0;
+			}
+			&:before{
+				transform-origin: 100% 0;
+    			transform: skewX(26deg);
+			}
+			&:after{
+				top: 50%;
+				transform-origin: 100% 100%;
+    			transform: skewX(-26deg);
+			}
+		}
+	}
+	img{
+		width: 90px !important;
+		height: auto !important;
+		position: relative;
+		z-index: 5;
+	}
+}
+
+
+/* .icon-bar > a.bg-red:hover{
+	background-color: $main-red;
+}
+
+.icon-bar > a.bg-blue:hover{
+	background-color: $main-blue;
+}
+
+.icon-bar > a.bg-green:hover{
+	background-color: $main-green;
+}*/
+
+.column-of-sidebar{
+	padding-left: 0!important;
+	padding-right: 0!important;
+	
+
+}
+
+.column-of-sidebar .sidebar-menu{
+	width: 100%;
+}
+
+
+.scrolloff{
+	pointer-events: none;
+}
