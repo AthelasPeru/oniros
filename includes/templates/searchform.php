@@ -7,8 +7,8 @@
  ?>
 
 
-<form role="search" action="<?php echo esc_url( home_url( '/' ) ); ?>" class=""  method="get">
-    <label for="search-field" class="">Search</label>
+<form role="search" method="get" id="searchForm" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>"   >
+    <label for="search-field" class=""><?php _e('Search for:','athelas_theme'); ?></label>
     <input type="search" name="s" id="search" value="<?php the_search_query(); ?>" class="" placeholder="busco...">
-    <button type="submit" class=""><span class="">Search</span></button>
+    <button type="submit" id="searchSubmit" class="search-submit" ><span class=""><?php _e('Search for:','athelas_theme'); ?></span></button>
 </form>

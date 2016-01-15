@@ -1,10 +1,13 @@
 <?php 
 /*
 Template Name: Page Base Template Name
+*
+* This page template should be used to create all other Pages templates.
+* just do it using the page-<slug>.php form. instead of page-base.php
+* For more info: http://codex.wordpress.org/Page_Templates
 */
 
-// This page template should be used to create all other Pages templates.
-// just do it using the page-<slug>.php form. instead of page-base.php
+
  ?>
  <?php get_header(); ?>
 

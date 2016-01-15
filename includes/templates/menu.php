@@ -6,9 +6,9 @@
 // get_template_part( "includes/templates/menu" );
 				 wp_nav_menu(array(
 				         'container' => false,                           // remove nav container
-				         'container_class' => 'main-menu cf',                 // class of container (should you choose to use it)
+				         'container_class' => 'main-menu',                 // class of container (should you choose to use it)
 				         'menu' => __( 'The Main Menu', 'athelas_theme' ),  // nav name
-				         'menu_class' => 'nav top-nav cf',               // adding custom nav class
+				         'menu_class' => 'nav top-nav',               // adding custom nav class
 				         'theme_location' => 'main-menu',                 // where it's located in the theme
 				         'before' => '',                                 // before the menu
 			               'after' => '',                                  // after the menu
