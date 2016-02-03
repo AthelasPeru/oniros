@@ -22,7 +22,7 @@ gulp.task('scss', function () {
     .pipe(changed(config.dist))
     .pipe(compass({
             config_file: "config.rb", // ruta al archivo config.rb
-            css: "stylesheets",  // carpeta de salida del scss
+            css: "source/css",  // carpeta de salida del scss
             sass: "source/scss",
             import_path: ['bower_components/'],
             //sourcemap: true

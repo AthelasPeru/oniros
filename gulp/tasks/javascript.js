@@ -24,17 +24,15 @@ var customOpts = {
 
 var opts = assign({}, watchify.args, customOpts);
 
-gulp.task('vendor', function() {
-  return gulp.src([ 
-    'bower_components/jquery/dist/jquery.js',
-    'bower_components/fastclick/lib/fastclick.js',    
-    'bower_components/jquery-placeholder/jquery.placeholder.js',
-    'bower_components/jquery.cookie/jquery.cookie.js',
-    'bower_components/foundation/js/vendor/*.js',
-    'bower_components/foundation/js/foundation.min.js',
-    'source/js/app.js'
-    ]) // trabajaremos con el archivo de jquery y nuestros js 
-    .pipe(concat('app.js')) // los concatenamos en el archivo app.js
+gulp.task('scripts', function() {
+    // list here all the js files you want to concatenate, NOT the ones that should run in just one particular page
+    // unless you create a safeguard so it doen't try to run where it will throw an error (check the app.js slider function for an example)
+  return gulp.src([     
+    'source/js/app.js',
+    'source/js/ajax-query.js',
+    'source/js/main-slider.js'
+    ]) 
+    .pipe(concat('app.js')) 
     .pipe(gulp.dest('dist/js'))
 }); 
 
@@ -67,6 +65,6 @@ gulp.task('javascriptOnHead', function () {
     .pipe( reload() )
 });
 
-gulp.task('scripts', ['javascriptOnHead', 'vendor']);
+gulp.task('scripts', ['javascriptOnHead', 'scripts']);
 
 b.on('log', gutil.log);
