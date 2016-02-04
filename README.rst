@@ -19,3 +19,12 @@ Sections/Folders
 - includes
 
 
+ROADMAP
++++++++++
+
+- Custom admin panel widget
+- add .htaccess
+- sphinx documentation
+- check custom functions
+- 
+
