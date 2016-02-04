@@ -99,8 +99,12 @@ gulp.task('admin', function () {
 });
 
 gulp.task('mvsourcemap', ["main", "login", "admin"], function(){
-    return gulp.src("source/css/main.css.map")
-        .pipe(gulp.dest(config.dist))       
+    return gulp.src("source/css/**/*.css.map")
+        .pipe(rename(function (path) {
+            path.dirname = "";
+          }))
+        .pipe(gulp.dest(config.dist))
+         
 });
 
 gulp.task("styles", ["mvsourcemap"], function(){

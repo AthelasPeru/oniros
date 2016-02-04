@@ -17,6 +17,7 @@ Sections/Folders
 - Source
 - root php
 - includes
+- .htaccess
 
 
 ROADMAP
