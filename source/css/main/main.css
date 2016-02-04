@@ -1,0 +1,42 @@
+.section-title {
+  font-family: "Amatic SC", cursive;
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 30px;
+}
+
+.section-subtitle {
+  font-family: "Amatic SC", cursive;
+  text-align: center;
+  font-size: 3rem;
+}
+
+#Form label {
+  text-transform: uppercase;
+  color: #388E3C;
+  font-weight: 700;
+}
+#Form input {
+  background-color: #4CAF50;
+  border: none;
+}
+#Form .send-button {
+  float: right;
+  font-weight: 700;
+}
+
+#Form2 h5 {
+  text-transform: uppercase;
+}
+
+/*HEADER*/
+.header {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.header h2 {
+  font-size: 3rem;
+}
+
+/*# sourceMappingURL=main.css.map */

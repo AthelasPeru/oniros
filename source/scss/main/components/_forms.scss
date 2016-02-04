@@ -1,0 +1,24 @@
+#Form{
+	label{
+		text-transform: uppercase;
+		color:$primary-dark;
+		font-weight: 700;
+	}
+
+	input{
+		background-color: $primary-light;
+		border:none;
+	}
+
+	.send-button{
+		float: right;
+		font-weight: 700;
+	}
+}
+
+
+#Form2{
+	h5{
+		text-transform: uppercase;
+	}
+}

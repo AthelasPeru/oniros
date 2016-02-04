@@ -8,7 +8,10 @@ module.exports = {
 		dist: dist
 	},
 	scss: {
-		source: source + '/scss',
+		login: source + '/scss/login',
+		admin: source + '/scss/admin',
+		main: source + '/scss/main',
+		html: ['*.html'], // path to html files to compare with uncss		
 		dist: dist + '/css'
 	},
 	javascript: {
@@ -22,7 +25,7 @@ module.exports = {
 		jpg: source + '/img/*.jpg',
 		png: source + '/img/*.png',
 		svg: source + '/img/*.svg',
-		ico: source + '/img/*.ico'
+		ico: source + '/img/favicon.png' //should be at least 75x75 px
 	},
 	fonts:{
 		source: source + '/fonts',
@@ -32,7 +35,7 @@ module.exports = {
 		files: [dist + '/**/*'],
 	    server: {
      		// Serve up our build folder
-     		baseDir: dist
+     		baseDir: "full path to root"
  		},
  		dist: dist
  	}

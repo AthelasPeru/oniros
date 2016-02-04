@@ -16,4 +16,4 @@ function athelas_image_support(){
 }
 	
 
- ?>
+?>

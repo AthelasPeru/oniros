@@ -84,15 +84,15 @@ include("includes/functions/ajax.php");
  include("includes/functions/image-sizes.php");
 
  // Athelas specials
- // Special house functions
- include("includes/functions/athelas-specials.php");
+ include("includes/functions/athelas-utilities.php");
 
 // Include Taxonomies
- // Esen please explain this
  include("includes/functions/taxonomies.php");
 
+// Include Admin modifcations
+ include("includes/functions/admin-tweaks.php");
 
-// menu
+// menus
  include("includes/functions/menu.php");
 
  //translations

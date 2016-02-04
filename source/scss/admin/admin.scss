@@ -1,0 +1,6 @@
+// Add imports to all ouf your scss files
+
+@import "../main/toolbox/colors",
+		"../main/toolbox/fonts",
+		"../main/toolbox/variables";
+@import "components/base";

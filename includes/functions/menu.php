@@ -5,7 +5,7 @@ function register_my_menus() {
     array(
     	// menu area slug    //menu title
       'main-menu' => __( 'Header Menu' ),
-      'extra-menu' => __( 'Extra Menu' )
+      'social-menu' => __( 'Social Menu' )
     )
   );
 }
