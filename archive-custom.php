@@ -16,7 +16,8 @@
 	$args = array(
           
           //Type & Status Parameters
-          'post_type'   => array('posttype'), //change thisone to your cpt-slug
+          'post_type'   => array('posttype'), //change this one to your cpt-slug
+          'posts_per_page' = -1
           
                  
     );

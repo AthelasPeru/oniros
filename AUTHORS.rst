@@ -2,7 +2,7 @@ Authors
 =========
 
 - Pedro Baumann `ondoheer <http://www.ondoheer.com>`_
-- Esen Espinosa
+- Esen Espinosa 
 
 Inspirations
 ===============

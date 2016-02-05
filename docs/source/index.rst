@@ -32,6 +32,25 @@ It was build to optimize our workflow and ensure best practices and similar patt
 We try to cover most usecases we encounter on a daily basis, so we don't have to be searching on old folders for the solution or way to implement
 something we build for a project 2 months ago. 
 
+What does it include/require to work?
++++++++++++++++++++++++++++++++++++++++++++++
+
+**Includes**
+
+- Sass structure
+- Sass Mixins
+- Compass config file
+- Gulp workflow
+- Slick Slider
+
+**Requires**
+
+- npm
+- bower (to install slick slider)
+- sass
+- compass
+
+
 Why Oniros?
 +++++++++++++++
 
@@ -39,6 +58,34 @@ We know there are a lot of other **Wordpress Templates** out there. For example,
 Also, we thought it be pretty nice to add our `Gulp build system <http://gulpjs.com/>`_ established for our **static** and `WordPress <http://wordpress.orgm/>`_ projects and based on the great `Frontend Starter Kit <https://github.com/beatpixel/Frontend-StarterKit>`_.
 
 Oh, you meant the name? Well, first, we are **huge** `The Sandman <http://www.vertigocomics.com/characters/the-sandman>`_ fans, second, our native tongue is spanish so we preffer the *spanification* of the name **Oneiros**. That's really it! Well and the fact that **Oniros** is the builder of dreams, and that's just awesome!
+
+What can Oniros do for me?
+++++++++++++++++++++++++++++++
+
+In Wordpress
+****************
+
+- Quickly start a WP template
+- Easily add WP Custom Post Types
+- Easily add WP Menus
+- Easily add custom image sizes to WP
+- Ajax configurarion and guide included
+- Easily add custom taxonomies
+- Polylang multilanguage site prepared
+- Help you reduce the use of external plugins
+- Allow you to use javascript files on specific pages
+- Follow good practices
+
+In general
+****************
+
+- Automatically generate all favicons with realfavicongenerator.com
+- Optimize your images
+- Process and minimize your sass/compass files
+- Separate Admin/Login and Main theme WP css and js files
+- Minimize and concatenate your javascript files, differentiating between your head and footer scripts
+- Algo con las fonts
+
 
 Why share it?
 +++++++++++++++
