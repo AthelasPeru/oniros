@@ -9,11 +9,11 @@ Call it via the functions file.
 // Admin footer modification
 
 
-function remove_footer_admin () 
+function replace_footer_admin () 
 {
     echo '<span id="footer-thankyou">Developed with love by: <a href="http://www.athelas.pe" target="_blank">Athelas</a> & <a href="" target="_blank">Designer/Developer name</a></span>';
 }
-add_filter('admin_footer_text', 'remove_footer_admin');
+add_filter('admin_footer_text', 'replace_footer_admin');
 
 
 
