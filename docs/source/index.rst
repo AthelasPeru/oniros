@@ -20,6 +20,7 @@ Contents:
    Includes Folder <includes>
    Gulp Tools <gulp>   
    .htaccess file <htaccess>
+   Contributing <contributing>
 
 
 

@@ -1,10 +1,9 @@
 Contributing
 ================
 
-In the spirit of [free software][free-sw], **everyone** is encouraged to help
+In the spirit of `free software <http://www.fsf.org/licensing/essays/free-sw.html>`_, **everyone** is encouraged to help
 improve this project. (this text is a blatant copy of the `middleman <https://github.com/middleman/middleman>`_ project)
 
-`free-sw <http://www.fsf.org/licensing/essays/free-sw.html>`_
 
 Here are some ways *you* can contribute:
 
