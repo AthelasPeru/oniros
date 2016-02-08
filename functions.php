@@ -97,3 +97,6 @@ require_once("includes/functions/ajax.php");
 
  //translations
  require_once("includes/functions/translation_strings.php");
+
+ // security
+ require_once("includes/functions/security.php");
