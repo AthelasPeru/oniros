@@ -6,6 +6,8 @@
 Welcome to Oniros's documentation!
 ====================================
 
+`Get Oniros <https://github.com/AthelasPeru/oniros>`_
+
 Overview
 ------------
 
