@@ -24,13 +24,11 @@ var customOpts = {
 
 var opts = assign({}, watchify.args, customOpts);
 
-gulp.task('scripts', function() {
+gulp.task('concatscripts', function() {
     // list here all the js files you want to concatenate, NOT the ones that should run in just one particular page
     // unless you create a safeguard so it doen't try to run where it will throw an error (check the app.js slider function for an example)
   return gulp.src([     
-    'source/js/app.js',
-    'source/js/ajax-query.js',
-    'source/js/main-slider.js'
+    'source/js/*.js'    
     ]) 
     .pipe(concat('app.js')) 
     .pipe(gulp.dest('dist/js'))
@@ -65,6 +63,6 @@ gulp.task('javascriptOnHead', function () {
     .pipe( reload() )
 });
 
-gulp.task('scripts', ['javascriptOnHead', 'scripts']);
+gulp.task('scripts', ['javascriptOnHead', 'concatscripts']);
 
 b.on('log', gutil.log);

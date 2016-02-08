@@ -11,7 +11,7 @@ module.exports = {
 		login: source + '/scss/login',
 		admin: source + '/scss/admin',
 		main: source + '/scss/main',
-		html: ['*.html'], // path to html files to compare with uncss		
+		html: ['./static_site/*.html'], // path to html files to compare with uncss		
 		dist: dist + '/css'
 	},
 	javascript: {
@@ -35,7 +35,7 @@ module.exports = {
 		files: [dist + '/**/*'],
 	    server: {
      		// Serve up our build folder
-     		baseDir: "full path to root"
+     		baseDir: "absolute_path_to_root/static_site/"
  		},
  		dist: dist
  	}

@@ -1,19 +1,4 @@
-.htaccess file
-==================
-
-This is the **.htaccess** file we use as a base for our projects, specially when wqe have to work with 
-shared servers and cannot use **nginx** as our server.
-
-Basically it does the following:
- 
- - Defines mime types the web server might not know about.
- - gzips (compresses) defined mime type files (don't add png to the mime types, it doesn't compress at all).
- - Adds expiracy headers for different mime type files.
- - Defines cache headers for different file types.
-
-.. code:: bash
-
-	# -----------------------------------------------------------------------
+# -----------------------------------------------------------------------
 	# Defining MIME types to ensure the web server actually knows about them.
 	# -----------------------------------------------------------------------
 	<IfModule mod_mime.c>

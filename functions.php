@@ -72,28 +72,28 @@ function set_ajax_vars(){
 add_action( 'wp_enqueue_scripts', 'set_ajax_vars');
 
 // Adds Ajax functionality defined for the Ajax endpoint
-include("includes/functions/ajax.php");
+require_once("includes/functions/ajax.php");
 
 
 // Include Custom Post Types
 // This has the basic setup to set new posttypes manually
- include("includes/functions/posttypes.php");
+ require_once("includes/functions/posttypes.php");
 
  // Include custom image sizes
  //  Define imagesizes the project needs to add to WP
- include("includes/functions/image-sizes.php");
+ require_once("includes/functions/image-sizes.php");
 
  // Athelas specials
- include("includes/functions/athelas-utilities.php");
+ require_once("includes/functions/athelas-utilities.php");
 
 // Include Taxonomies
- include("includes/functions/taxonomies.php");
+ require_once("includes/functions/taxonomies.php");
 
 // Include Admin modifcations
- include("includes/functions/admin-tweaks.php");
+ require_once("includes/functions/admin-tweaks.php");
 
 // menus
- include("includes/functions/menu.php");
+ require_once("includes/functions/menu.php");
 
  //translations
- include("includes/functions/translation_strings.php");
+ require_once("includes/functions/translation_strings.php");

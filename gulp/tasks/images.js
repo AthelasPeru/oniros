@@ -38,16 +38,12 @@ gulp.task('images:svg', function() {
           errorHandler: errorHandler
       }))
       .pipe(changed(config.dist))
-      .pipe( isProduction === true ? pngmin() : gutil.noop() )
+      .pipe( isProduction === true ? imagemin({multipass:true}) : gutil.noop() )
       .pipe(plumber.stop())
       .pipe(gulp.dest(config.dist))
 });
 
-gulp.task('images:fav', function() {
-  return gulp.src(config.ico)
-  	.pipe(changed(config.dist))
-    .pipe(gulp.dest(config.dist))
-});
 
 
-gulp.task('images', ['images:jpg', 'images:png', 'images:svg', 'images:fav'] );
+
+gulp.task('images', ['images:jpg', 'images:png', 'images:svg'] );
