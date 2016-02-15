@@ -19,7 +19,22 @@
     "login:autoprefixer": "postcss -u autoprefixer -r dist/css/login/*.css",
     "login:build:css": "npm run login:scss && npm run login:autoprefixer",
 
-    "all:build:css": "parallelshell 'npm run main:build:css' 'npm run admin:build:css' 'npm run login:build:css' "
+    "all:build:css": "parallelshell 'npm run main:build:css' 'npm run admin:build:css' 'npm run login:build:css' ",
+
+    "main:uglify": "mkdir -p dist/js && uglifyjs source/js/ajax-query.js source/js/app.js -m -c --name-cache /tmp/cache.json -o dist/js/app.min.js --lint --source-map dist/js/app.min.js.map",
+    "head:uglify": "mkdir -p dist/js/head && uglifyjs source/js/head/*.js -m -c --name-cache /tmp/cache.json -o dist/js/head/head.min.js --lint --source-map dist/js/head/app.min.js.map",
+
+    "imagemin": "mkdir -p dist/img && imagemin source/img dist/img -p",
+    "icons": "svgo -f source/sprite && mkdir -p dist/img && svg-sprite-generate -d source/sprite -o dist/img/icons.svg",
+
+
+    "serve": "browser-sync start --server --files 'dist/css/**/*.css, dist/js/**/*.js'",
+    "watch:js": "onchange 'source/js/*.js' -- npm run uglify",
+    "watch:headjs": "onchange 'source/js/head/*.js' -- npm run uglify",
+    "watch:css": "onchange 'source/scss/**/*.scss' -- npm run all:build:css",
+    "watch:all": "parallelshell 'npm run serve' 'npm run watch:css' 'npm run watch:js' 'npm run watch:headjs'"
+
+
 
   },
   "repository": {
