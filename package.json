@@ -8,6 +8,7 @@
     "main:scss:min": "mkdir -p dist/css/main && node-sass --output-style compressed source/scss/main/main.scss > dist/css/main/main.min.css",
     "main:autoprefixer": "postcss -u autoprefixer -r dist/css/main/*.css",
     "main:build:css": "npm run main:scss && npm run main:autoprefixer && npm run sprite:svg",
+    "main:uncss":"uncss http://localhost/oniros/static_site/contact.html > dist/css/main/main.un.css",
     "admin:scss": "mkdir -p dist/css/admin && node-sass --output-style nested --indent-type tab --indent-width 1 --source-map true -o dist/css/admin source/scss/admin/admin.scss",
     "admin:scss:min": "mkdir -p dist/css/admin && node-sass --output-style compressed source/scss/admin/admin.scss > dist/css/admin/admin.min.css",
     "admin:autoprefixer": "postcss -u autoprefixer -r dist/css/admin/*.css",
@@ -44,7 +45,8 @@
     "parallelshell": "^2.0.0",
     "postcss-cli": "^2.5.1",
     "svg-sprite": "^1.2.19",
-    "uglify-js": "^2.6.1"
+    "uglify-js": "^2.6.1",
+    "uncss": "^0.13.0"
   },
   "homepage": "http://www.athelas.pe/oniros",
   "dependencies": {}
