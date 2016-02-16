@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="88px" height="79px" viewBox="0 0 88 79" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.1 (12002) - http://www.bohemiancoding.com/sketch -->
+    <title>ico_hamburguesa</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Tipos-de-negocios" sketch:type="MSArtboardGroup" transform="translate(-1012.000000, -701.000000)">
+            <g id="Tipos-de-Negocios-Copy" sketch:type="MSLayerGroup" transform="translate(0.000000, 529.000000)">
+                <g id="Rectangle-515-Copy-+-Restaurante-+-thin-0871_meal_eating_restaurant_offer-+-Rectangle-515-Copy-2-+-Tiendas-Retail-+-thin-0944_t-shirt-+-Rectangle-515-Copy-5-+-Camida-rápida-+-thin-0909_hamburger_fast_food" transform="translate(232.000000, 72.000000)" sketch:type="MSShapeGroup">
+                    <g id="Rectangle-515-Copy-5-+-Camida-rápida-+-thin-0909_hamburger_fast_food" transform="translate(672.000000, 0.000000)">
+                        <g id="ico_hamburguesa" transform="translate(108.000000, 96.000000)">
+                            <g id="Group" transform="translate(1.222222, 4.877714)" stroke="#9B9B9B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M80.7296111,33.1701467 C80.7296111,15.2084919 63.7232444,0.648001829 42.7447778,0.648001829 C21.7663111,0.648001829 4.76031111,15.2084919 4.76031111,33.1701467 L80.7296111,33.1701467 L80.7296111,33.1701467 Z" id="Shape"></path>
+                                <path d="M80.7296111,65.7415314 L4.76031111,65.7415314 L4.76031111,66.9290789 C4.76031111,72.2719561 9.02831111,76.6032457 14.2932778,76.6032457 L71.1970111,76.6032457 C76.4619778,76.6032457 80.7299778,72.2719561 80.7299778,66.9290789 L80.7299778,65.7415314 L80.7296111,65.7415314 Z" id="Shape"></path>
+                                <path d="M84.9968778,58.2063982 C84.9968778,56.3693202 83.4220444,54.8798171 81.4798111,54.8798171 L4.01047778,54.8798171 C2.06787778,54.8798171 0.493411111,56.3689582 0.493411111,58.2063982 L0.493411111,62.4153125 C0.493411111,64.2523904 2.06824444,65.7415314 4.01047778,65.7415314 L81.4798111,65.7415314 C83.4224111,65.7415314 84.9968778,64.2523904 84.9968778,62.4153125 L84.9968778,58.2063982 L84.9968778,58.2063982 Z" id="Shape"></path>
+                                <path d="M82.9882778,41.1542309 L76.3743444,47.3743726 L69.5572778,40.9637888 L62.7405778,47.3743726 L55.9231444,40.9637888 L49.3095778,47.1839305 L42.4921444,40.7733467 L35.6754444,47.1839305 L28.8580111,40.7733467 L28.7736778,40.8816018 L22.1601111,47.1017435 L15.3426778,40.6911598 L8.52597778,47.1017435 L1.70854444,40.6911598" id="Shape"></path>
+                                <path d="M33.2609444,11 L34.2355444,11" id="Shape"></path>
+                                <path d="M44.1564444,17 L45.1310444,17" id="Shape"></path>
+                                <path d="M51.4593444,11 L52.4339444,11" id="Shape"></path>
+                            </g>
+                            <rect id="Rectangle-path" x="0" y="0.0713252571" width="88" height="86.8937143"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

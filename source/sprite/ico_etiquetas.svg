@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="39px" height="40px" viewBox="0 0 39 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.1 (12002) - http://www.bohemiancoding.com/sketch -->
+    <title>ico_etiquetas</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Home" sketch:type="MSArtboardGroup" transform="translate(-905.000000, -4350.000000)">
+            <g id="Equipos" sketch:type="MSLayerGroup" transform="translate(0.000000, 3336.000000)">
+                <g id="Modos-de-pago-+-Cras-quis-nulla-comm-Copy-5-+-thin-0437_tag_price_sale" transform="translate(903.000000, 1015.000000)" sketch:type="MSShapeGroup">
+                    <g id="ico_etiquetas" transform="translate(2.000000, 0.000000)">
+                        <g id="Group" transform="translate(0.600000, 0.000000)" stroke="#FFAE36" stroke-width="1.6">
+                            <path d="M37.1072,19.76592 C23.86608,6.65152 26.59056,9.34992 18.3224,1.16112 C17.80096,0.6448 17.1328,0.76512 16.3544,0.768 L2.13968,0.83552 C1.40192,0.84656 0.77008,1.43648 0.77392,2.21616 L0.84736,17.42768 C0.8488,17.7896 0.99648,18.13792 1.25344,18.396 C1.55392,18.6936 20.05776,37.09488 20.44464,37.26544 C21.01776,37.52896 21.61936,37.35184 21.97808,36.9896 L37.11472,21.70752 C37.65088,21.16848 37.64592,20.29792 37.1072,19.76592 L37.1072,19.76592 Z" id="Shape"></path>
+                            <ellipse id="Oval" cx="8.86016" cy="8.82448" rx="3.11344" ry="3.11344"></ellipse>
+                        </g>
+                        <rect id="Rectangle-path" x="0.57824" y="0.00016" width="38.4" height="38.4"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

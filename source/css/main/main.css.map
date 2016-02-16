@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,cAAc;EACb,WAAW,ECCK,oBAAoB;EDApC,UAAU,EAAE,MAAM;EAClB,SAAS,EAAE,IAAI;EACf,aAAa,EAAE,IAAI;;;AAQpB,iBAAiB;EAChB,WAAW,ECXK,oBAAoB;EDYpC,UAAU,EAAE,MAAM;EAClB,SAAS,EAAE,IAAI;;;AEdf,WAAK;EACJ,cAAc,EAAE,SAAS;EACzB,KAAK,ECDS,OAAO;EDErB,WAAW,EAAE,GAAG;;AAGjB,WAAK;EACJ,gBAAgB,ECJF,OAAO;EDKrB,MAAM,EAAC,IAAI;;AAGZ,kBAAY;EACX,KAAK,EAAE,KAAK;EACZ,WAAW,EAAE,GAAG;;;AAMjB,SAAE;EACD,cAAc,EAAE,SAAS;;;AEnB3B,UAAU;AAGV,OAAO;EAEN,eAAe,EAAE,KAAK;EACtB,iBAAiB,EAAE,SAAS;EAC5B,MAAM,EAAE,KAAK;;AACb,UAAE;EACD,SAAS,EAAE,IAAI",
-"sources": ["../../scss/main/components/_titles.scss","../../scss/main/toolbox/_fonts.scss","../../scss/main/components/_forms.scss","../../scss/main/toolbox/_colors.scss","../../scss/main/components/_header.scss"],
-"names": [],
-"file": "main.css"
-}

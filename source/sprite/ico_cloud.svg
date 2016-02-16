@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="49px" height="34px" viewBox="0 0 49 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.1 (12002) - http://www.bohemiancoding.com/sketch -->
+    <title>ico_cloud</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Home" sketch:type="MSArtboardGroup" transform="translate(-359.000000, -1173.000000)">
+            <g id="Caracteristicas" sketch:type="MSLayerGroup" transform="translate(0.000000, 648.000000)">
+                <g id="ico_cloud" transform="translate(358.750000, 515.250000)" sketch:type="MSShapeGroup">
+                    <g id="Group" transform="translate(1.540659, 10.784613)" stroke="#00BDE9" stroke-width="2">
+                        <path d="M36.6413919,31.322626 C41.7243343,31.322626 46.0184593,26.718315 46.0184593,21.2709554 C46.0184593,15.6368679 41.361355,10.6284934 35.5715583,11.2788569 C34.3361551,6.63592674 30.447737,3.00798277 24.8586368,3.8083038 C17.4115017,-3.43998357 6.29390043,1.4886875 4.67785178,12.8285545 C-3.70703114,18.8056954 0.681382151,31.322626 9.09605114,31.322626 L36.6413919,31.322626 L36.6413919,31.322626 Z" id="Shape"></path>
+                        <path d="M28.8838654,15.9873164 C28.0241776,13.0395221 25.3066604,10.8838319 22.0811366,10.8838319 C18.8558182,10.8838319 16.1380956,13.0395221 15.2784079,15.9873164" id="Shape"></path>
+                        <path d="M30.2681989,12.5101516 L28.9179653,15.9873164 L25.4410059,14.6368774" id="Shape"></path>
+                        <path d="M15.3334607,19.9607789 C16.1931485,22.9085732 18.9106657,25.0642634 22.1361895,25.0642634 C25.3615079,25.0642634 28.0792305,22.9085732 28.9389183,19.9607789" id="Shape"></path>
+                        <path d="M13.9491272,23.4377383 L15.2993608,19.9607789 L18.7763202,21.3110125" id="Shape"></path>
+                    </g>
+                    <rect id="Rectangle-path" x="0" y="0.000205421209" width="49.3010902" height="49.3010902"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -7,35 +7,26 @@
     "main:scss": "mkdir -p dist/css/main && node-sass --output-style nested --indent-type tab --indent-width 1 --source-map true -o dist/css/main source/scss/main/main.scss",
     "main:scss:min": "mkdir -p dist/css/main && node-sass --output-style compressed source/scss/main/main.scss > dist/css/main/main.min.css",
     "main:autoprefixer": "postcss -u autoprefixer -r dist/css/main/*.css",
-    "main:build:css": "npm run main:scss && npm run main:autoprefixer",
-
+    "main:build:css": "npm run main:scss && npm run main:autoprefixer && npm run sprite:svg",
     "admin:scss": "mkdir -p dist/css/admin && node-sass --output-style nested --indent-type tab --indent-width 1 --source-map true -o dist/css/admin source/scss/admin/admin.scss",
     "admin:scss:min": "mkdir -p dist/css/admin && node-sass --output-style compressed source/scss/admin/admin.scss > dist/css/admin/admin.min.css",
     "admin:autoprefixer": "postcss -u autoprefixer -r dist/css/admin/*.css",
     "admin:build:css": "npm run admin:scss && npm run admin:autoprefixer",
-
     "login:scss": "mkdir -p dist/css/login && node-sass --output-style nested --indent-type tab --indent-width 1 --source-map true -o dist/css/login source/scss/login/login.scss",
     "login:scss:min": "mkdir -p dist/css/login && node-sass --output-style compressed source/scss/login/login.scss > dist/css/login/login.min.css",
     "login:autoprefixer": "postcss -u autoprefixer -r dist/css/login/*.css",
     "login:build:css": "npm run login:scss && npm run login:autoprefixer",
-
     "all:build:css": "parallelshell 'npm run main:build:css' 'npm run admin:build:css' 'npm run login:build:css' ",
-
     "main:uglify": "mkdir -p dist/js && uglifyjs source/js/ajax-query.js source/js/app.js -m -c --name-cache /tmp/cache.json -o dist/js/app.min.js --lint --source-map dist/js/app.min.js.map",
     "head:uglify": "mkdir -p dist/js/head && uglifyjs source/js/head/*.js -m -c --name-cache /tmp/cache.json -o dist/js/head/head.min.js --lint --source-map dist/js/head/app.min.js.map",
-
     "imagemin": "mkdir -p dist/img && imagemin source/img dist/img -p",
-    "icons": "svgo -f source/sprite && mkdir -p dist/img && svg-sprite-generate -d source/sprite -o dist/img/icons.svg",
-
-
+    "sprite:svg": "mkdir -p dist/sprite && svg-sprite -cD dist/sprite --cs ../sprite.svg --css-render-scss-dest ../sprite.scss --log verbose --cscss source/sprite/*.svg && mv dist/sprite/sprite.scss source/scss/main/components/_sprite.scss",
+    "favicon": "real-favicon generate faviconDescription.json faviconData.json .",
     "serve": "browser-sync start --server --files 'dist/css/**/*.css, dist/js/**/*.js'",
     "watch:js": "onchange 'source/js/*.js' -- npm run uglify",
     "watch:headjs": "onchange 'source/js/head/*.js' -- npm run uglify",
     "watch:css": "onchange 'source/scss/**/*.scss' -- npm run all:build:css",
     "watch:all": "parallelshell 'npm run serve' 'npm run watch:css' 'npm run watch:js' 'npm run watch:headjs'"
-
-
-
   },
   "repository": {
     "type": "git",
@@ -46,13 +37,13 @@
   "devDependencies": {
     "autoprefixer": "^6.3.3",
     "browser-sync": "^2.11.1",
+    "cli-real-favicon": "0.0.5",
     "imagemin-cli": "^2.1.0",
     "node-sass": "^3.4.2",
     "onchange": "^2.0.0",
     "parallelshell": "^2.0.0",
     "postcss-cli": "^2.5.1",
-    "svg-sprite-generator": "0.0.7",
-    "svgo": "^0.6.1",
+    "svg-sprite": "^1.2.19",
     "uglify-js": "^2.6.1"
   },
   "homepage": "http://www.athelas.pe/oniros",
