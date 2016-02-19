@@ -31,9 +31,9 @@ function athelas_scripts(){
 		
 	} else{
 		// Our own stylesheet
-		wp_enqueue_style('app', get_stylesheet_directory_uri().'source/css/main.css');	
+		wp_enqueue_style('app', get_stylesheet_directory_uri().'dist/css/main.css');	
 		// Own script
-		wp_enqueue_script('main',get_stylesheet_directory_uri().'source/js/app.js', array('jquery'), null, true);
+		wp_enqueue_script('main',get_stylesheet_directory_uri().'dist/js/app.js', array('jquery'), null, true);
 
 		// We load the slick assets only if we need them, change this to any other page where you might need it
 		if(is_front_page()){

@@ -24,8 +24,8 @@
     "sprite:svg": "mkdir -p dist/sprite && svg-sprite -cD dist/sprite --cs ../sprite.svg --css-render-scss-dest ../sprite.scss --log verbose --cscss source/sprite/*.svg && mv dist/sprite/sprite.scss source/scss/main/components/_sprite.scss",
     "favicon": "real-favicon generate faviconDescription.json faviconData.json .",
     "serve": "browser-sync start --server --files 'dist/css/**/*.css, dist/js/**/*.js'",
-    "watch:js": "onchange 'source/js/*.js' -- npm run uglify",
-    "watch:headjs": "onchange 'source/js/head/*.js' -- npm run uglify",
+    "watch:js": "onchange 'source/js/*.js' -- npm run main:uglify",
+    "watch:headjs": "onchange 'source/js/head/*.js' -- npm run head:uglify",
     "watch:css": "onchange 'source/scss/**/*.scss' -- npm run all:build:css",
     "watch:all": "parallelshell 'npm run serve' 'npm run watch:css' 'npm run watch:js' 'npm run watch:headjs'"
   },
