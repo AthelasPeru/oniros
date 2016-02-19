@@ -16,7 +16,7 @@ function athelas_scripts(){
 		wp_enqueue_style('app', get_stylesheet_directory_uri().'dist/css/app.min.css');	
 		
 		// here we add the slick js as a dependcy to the frontpage so we ensure it always loads first on the homescreen
-		$dependencies = is_front_page() ? array("jquery", "slick"), array("jquery"); 
+		$dependencies = is_front_page() ? array("jquery", "slick") :  array("jquery"); 
 		// Own script
 		wp_enqueue_script('main',get_stylesheet_directory_uri().'dist/js/app.min.js', $dependencies, null, true);
 

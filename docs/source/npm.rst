@@ -20,30 +20,63 @@ and thats all!
 
 Scripts
 ----------
+Css
+******
+
+    all:build:css 
+
+Main scripts
+````````````````
+
+Main scripts are aplied to the files in your main scss files, In oniros main files are the theme files per se.
+
+main:scss
+
+    main:scss:min 
+    main:autoprefixer 
+    main:build:css 
+    main:uncss
 
 
-    "main:scss": 
-    "main:scss:min": 
-    "main:autoprefixer": 
-    "main:build:css": 
-    "main:uncss":
-    "admin:scss": 
-    "admin:scss:min": 
-    "admin:autoprefixer": 
-    "admin:build:css": 
-    "login:scss": 
-    "login:scss:min": 
-    "login:autoprefixer": 
-    "login:build:css": 
-    "all:build:css": 
-    "main:uglify": 
-    "head:uglify": 
-    "imagemin": 
-    "sprite:svg": 
-    "favicon": 
-    "serve": 
-    "watch:js": 
-    "watch:headjs": 
-    "watch:css": 
-    "watch:all": 
-  },
+Admin scripts
+````````````````
+
+Admin scripts are aplied to the files in your admin scss files, these let you change css and js in the WP admin panel
+
+    admin:scss 
+    admin:scss:min 
+    admin:autoprefixer 
+    admin:build:css 
+
+
+Login scripts
+````````````````
+    login:scss 
+    login:scss:min 
+    login:autoprefixer 
+    login:build:css 
+
+Login scripts are aplied to the files in your login scss files, these let you change css and js in the WP Login Template
+
+
+Javascript
+*************
+
+    main:uglify 
+    head:uglify 
+
+Images
+************
+    imagemin 
+    sprite:svg 
+    favicon 
+
+Serve and Watch
+*****************
+
+    serve 
+    watch:js 
+    watch:headjs 
+    watch:css 
+    watch:all 
+  
