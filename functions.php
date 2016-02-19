@@ -13,7 +13,7 @@ function athelas_scripts(){
 	wp_enqueue_style('base', get_stylesheet_directory_uri().'/style.css' );
 	if(!WP_DEBUG){
 		// Our own stylesheet
-		wp_enqueue_style('app', get_stylesheet_directory_uri().'dist/css/app.min.css');	
+		wp_enqueue_style('app', get_stylesheet_directory_uri().'dist/css/main.min.css');	
 		
 		// here we add the slick js as a dependcy to the frontpage so we ensure it always loads first on the homescreen
 		$dependencies = is_front_page() ? array("jquery", "slick") :  array("jquery"); 
@@ -31,7 +31,7 @@ function athelas_scripts(){
 		
 	} else{
 		// Our own stylesheet
-		wp_enqueue_style('app', get_stylesheet_directory_uri().'source/css/app.css');	
+		wp_enqueue_style('app', get_stylesheet_directory_uri().'source/css/main.css');	
 		// Own script
 		wp_enqueue_script('main',get_stylesheet_directory_uri().'source/js/app.js', array('jquery'), null, true);
 
