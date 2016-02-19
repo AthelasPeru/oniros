@@ -13,12 +13,12 @@ function athelas_scripts(){
 	wp_enqueue_style('base', get_stylesheet_directory_uri().'/style.css' );
 	if(!WP_DEBUG){
 		// Our own stylesheet
-		wp_enqueue_style('app', get_stylesheet_directory_uri().'dist/css/main.min.css');	
+		wp_enqueue_style('app', get_stylesheet_directory_uri().'/dist/css/main.min.css');	
 		
 		// here we add the slick js as a dependcy to the frontpage so we ensure it always loads first on the homescreen
 		$dependencies = is_front_page() ? array("jquery", "slick") :  array("jquery"); 
 		// Own script
-		wp_enqueue_script('main',get_stylesheet_directory_uri().'dist/js/app.min.js', $dependencies, null, true);
+		wp_enqueue_script('main',get_stylesheet_directory_uri().'/dist/js/app.min.js', $dependencies, null, true);
 
 
 		// We load the slick assets only if we need them, change this to any other page where you might need it
@@ -31,9 +31,9 @@ function athelas_scripts(){
 		
 	} else{
 		// Our own stylesheet
-		wp_enqueue_style('app', get_stylesheet_directory_uri().'dist/css/main.css');	
+		wp_enqueue_style('app', get_stylesheet_directory_uri().'/dist/css/main.css');	
 		// Own script
-		wp_enqueue_script('main',get_stylesheet_directory_uri().'dist/js/app.js', array('jquery'), null, true);
+		wp_enqueue_script('main',get_stylesheet_directory_uri().'/dist/js/app.js', array('jquery'), null, true);
 
 		// We load the slick assets only if we need them, change this to any other page where you might need it
 		if(is_front_page()){
