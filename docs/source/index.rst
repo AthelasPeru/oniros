@@ -42,8 +42,7 @@ What does it include/require to work?
 
 - Sass structure
 - Sass Mixins
-- Compass config file
-- Gulp workflow
+- Npm Scripts workflow
 - Slick Slider
 
 **Requires**
@@ -51,7 +50,6 @@ What does it include/require to work?
 - npm
 - bower (to install slick slider)
 - sass
-- compass
 
 
 Why Oniros?
