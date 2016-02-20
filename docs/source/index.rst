@@ -20,6 +20,7 @@ Contents:
    Static Site Folder <static_site>   
    Wordpress Files and Functions <wordpress_files>
    Includes Folder <includes>
+   Assets (SCSS, JS, Images, Sprites) <assets>
    npm Scripts <npm>   
    .htaccess file <htaccess>
    Contributing <contributing>
