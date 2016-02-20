@@ -111,10 +111,10 @@ function athelas_breadcrumb() {
 
 
 
-// Numbered Pagination (DEBERIAMOS RE-HACER ESTA FUNCION)
-if ( !function_exists( 'wpex_pagination' ) ) {
+// Numbered Pagination
+if ( !function_exists( 'athelas_pagination' ) ) {
 //http://www.wpexplorer.com/pagination-wordpress-theme/
-	function wpex_pagination() {
+	function athelas_pagination() {
 		
 		$prev_arrow = is_rtl() ? '>' : '<';
 		$next_arrow = is_rtl() ? '<;' : '>';
