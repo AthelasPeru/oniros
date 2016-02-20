@@ -38,10 +38,11 @@ This file sets the basics for using ajax in WP, here you should add the
 php process that will generate the data to return.
 
 
+
 athelas-utilities
 ++++++++++++++++++++
 
-ESENNNNNN
+TODO by `esen <esen@athelas.pe>`_ , please swamp his inbox with complains
 
 image-sizes
 ++++++++++++++++++++
