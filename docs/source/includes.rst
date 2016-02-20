@@ -43,18 +43,18 @@ athelas-utilities
 ++++++++++++++++++++
 
 athelas_thumbnail()
-******************
+*******************
 
 Simple function to facilitate thumbnail use with `Advanced Custom Fields Plugin <http://www.advancedcustomfields.com/?ref=http://www.athelas.pe/oniros>`_. You can pass an array with classes and an ID if you want some image-field out of the WP_query. The main parameters are the $image_field_name and the $image_size_name (see image_sizes Documentation below).
 
 
 get_athelas_custom_field_excerpt()
-*********************************
+**********************************
 
 Just a common snippet for wordpress if you want to work with custom posttypes and `Advanced Custom Fields Plugin <http://www.advancedcustomfields.com/?ref=http://www.athelas.pe/oniros>`_, it makes easy to show just an excerpt of any type of text area field on any type of custom posttype. Accepts 2 parameters :  $text_field and the number of $chars you want to show.
 
 the_excerpt_max_charlength()
-***************************
+****************************
 
 Another common script (one you don't want to miss on your wp theme) that changes the default charlength of the custom blog-post excerpt. 
 
@@ -64,12 +64,12 @@ athelas_breadcrumb()
 [Work in Progress...] This is a function you will need to edit before you use it. It's not on it's final form and the use of this depends on the way your frontend is built, and on the way your Information Arquitecture is made, etc. The logic is simple: it gets the URL of the current page (the page where you excecute the function...) and it cleans the info so you can have breadcrumbs. **IF YOUR WEB ARQUITECTURE IS NOT CLEAR AND SEO-FRIENDLY, THIS WILL NOT WORK.**
 
 athelas_pagination()
-*****************
+********************
 
 [Work in Progress...] Pagination that works. Almost all the times. This is a snippet found on `WPExplorer <http://www.wpexplorer.com/pagination-wordpress-theme/?ref=http://www.athelas.pe/oniros>`_. 
 
 related_posts_args()
-*******************
+*********************
 
 [Work in Progress...] Ok. So this is a great tool you should understand yourself and change it to your needs. The idea is that you will just need to run this like 
 	
@@ -80,12 +80,12 @@ and with that you will have everything ready. The example that is implemented wo
 The whole Idea is to have less php in your templates, and more in your include files. So you can control better what you do. 
 
 athelas_show_categories()
-************************
+**************************
 
 Show your categories in a simple html template. You can add classes, edit the template or just use css to make it look what you want. 
 
 add_custom_posts_per_page()
-**************************
+****************************
 
 [Work in Progress...] This is magic. I'm sorry but I can't explain yet how this fixes everything all the time, but the athelas_pagination() function will probably not work if this is erased. So keep it for your own good. 
 
@@ -95,12 +95,12 @@ athelas_set_post_views()
 This function makes the magic for post views ordering with the next one. Just use it in the loop with the post_id.
 
 athelas_track_post_views()
-*************************
+***************************
 
 This function makes the magic for post views ordering with the previous one. Just leave it and love it. 
 
 athelas_get_post_views()
-***********************
+*************************
 
 Just if you want to show post-views in your templates, use this function.
 
