@@ -6,8 +6,9 @@
  		"lib/juice/dist/juice";
 @import "toolbox/colors",
 		"toolbox/fonts",
+		"toolbox/flexbox",
 		"toolbox/variables";
-@import "components/flexbox",
+@import "components/reset",
 		"components/base",
 		"components/sprite",
 		"components/titles",

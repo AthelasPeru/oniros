@@ -25,7 +25,7 @@
     "all:build:js": "parallelshell 'npm run main:uglify' 'npm run head:uglify' 'npm run single:uglify' ",
     "imagemin": "mkdir -p dist/img && imagemin source/img dist/img -p",
     "favicon": "real-favicon generate faviconDescription.json faviconData.json .",
-    "serve": "browser-sync start --server --files 'dist/css/**/*.css, dist/js/**/*.js'",
+    "serve": "browser-sync start --server --files 'dist/css/**/*.css, dist/js/**/*.js' --index static_site/index.html",
     "watch:js": "onchange 'source/js/*.js' -- npm run main:uglify",
     "watch:headjs": "onchange 'source/js/head/*.js' -- npm run head:uglify",
     "watch:css": "onchange 'source/scss/**/*.scss' -- npm run all:build:css",
