@@ -2,7 +2,7 @@
   "name": "foundation-compass-app",
   "version": "0.0.1",
   "private": "true",
-  "dependencies": {    
-    "slick-carousel": "~1.5.8"
+  "dependencies": {
+    "slick-carousel": "~1.5.8"    
   }
 }
