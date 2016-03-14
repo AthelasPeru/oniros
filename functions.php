@@ -14,39 +14,30 @@ function athelas_scripts(){
 	if(!WP_DEBUG){
 		// Our own stylesheet
 		wp_enqueue_style('app', get_stylesheet_directory_uri().'/dist/css/main.min.css');	
+		// Slick
+		wp_enqueue_script('slick', get_stylesheet_directory_uri().'/bower_components/slick-carousel/slick/slick.min.js', array('jquery'), null, true );
 		
-		// here we add the slick js as a dependcy to the frontpage so we ensure it always loads first on the homescreen
-		$dependencies = is_front_page() ? array("jquery", "slick") :  array("jquery"); 
 		// Own script
-		wp_enqueue_script('main',get_stylesheet_directory_uri().'/dist/js/app.min.js', $dependencies, null, true);
+		wp_enqueue_script('main',get_stylesheet_directory_uri().'/dist/js/app.min.js', array('jquery', "slick"), null, true);
 
-
-		// We load the slick assets only if we need them, change this to any other page where you might need it
-		if(is_front_page()){
-			// slick slider stylesheet. Comment it if slick won't be used
-			wp_enqueue_style('slick_style', get_stylesheet_directory_uri().'/bower_components/slick-carousel/slick/slick.min.css');
-			// Slick
-			wp_enqueue_script('slick', get_stylesheet_directory_uri().'/bower_components/slick-carousel/slick/slick.min.js', array('jquery'), null, true );
-			// main slider
-			wp_enqueue_script('main-slider', get_stylesheet_directory_uri().'/dist/js/single/main-slider.min.js', array('jquery', 'slick'), null, true );
-
-		}
+		
+		// slick slider stylesheet. Comment it if slick won't be used
+		wp_enqueue_style('slick_style', get_stylesheet_directory_uri().'/bower_components/slick-carousel/slick/slick.min.css');	
+		
 		
 	} else{
 		// Our own stylesheet
 		wp_enqueue_style('app', get_stylesheet_directory_uri().'/dist/css/main.css');	
+		// Slick
+		wp_enqueue_script('slick', get_stylesheet_directory_uri().'/bower_components/slick-carousel/slick/slick.js', array('jquery'), null, true );
 		// Own script
-		wp_enqueue_script('main',get_stylesheet_directory_uri().'/dist/js/app.js', array('jquery'), null, true);
-
-		// We load the slick assets only if we need them, change this to any other page where you might need it
-		if(is_front_page()){
-			// slick slider stylesheet. Comment it if slick won't be used
-			wp_enqueue_style('slick_style', get_stylesheet_directory_uri().'/bower_components/slick-carousel/slick/slick.css');
-			// Slick
-			wp_enqueue_script('slick', get_stylesheet_directory_uri().'/bower_components/slick-carousel/slick/slick.js', array('jquery'), null, true );
-			// main slider
-			wp_enqueue_script('main-slider', get_stylesheet_directory_uri().'/dist/js/single/main-slider.min.js', array('jquery', 'slick'), null, true );
-		}
+		wp_enqueue_script('main',get_stylesheet_directory_uri().'/dist/js/app.js', array('jquery', 'slick'), null, true);
+		
+		// slick slider stylesheet. Comment it if slick won't be used
+		wp_enqueue_style('slick_style', get_stylesheet_directory_uri().'/bower_components/slick-carousel/slick/slick.css');
+		
+		
+		
 	}
 
 
@@ -60,21 +51,7 @@ function athelas_scripts(){
 }
 add_action( 'wp_enqueue_scripts', 'athelas_scripts');
 
-function set_ajax_vars(){
-	/* This is an example, here we are making PHP WP data avaliable to our
-	* main script. 
-	* https://codex.wordpress.org/Function_Reference/wp_localize_script
-	* @'ajaxurl' defines the endpoint availiable for ajax so the JS file can access it.
-	* @'wp_query' if a user defined variable which can contain ANY WP data you want to send, I chose to send WP query here just because.
-	*/
-	global $wp_query;
-	    wp_localize_script( 'main', 'ajaxquery', array(
-			'ajaxurl' => admin_url( 'admin-ajax.php' ),
-	    	'wp_query' => json_encode($wp_query->query)
-	    	)
-		);
-}
-add_action( 'wp_enqueue_scripts', 'set_ajax_vars');
+
 
 // Adds Ajax functionality defined for the Ajax endpoint
 require_once("includes/functions/ajax.php");
