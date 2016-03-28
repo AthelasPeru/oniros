@@ -20,12 +20,17 @@ Contents:
    Static Site Folder <static_site>   
    Wordpress Files and Functions <wordpress_files>
    Includes Folder <includes>
+   Assets (SCSS, JS, Images, Sprites) <assets>
    npm Scripts <npm>   
    .htaccess file <htaccess>
    Contributing <contributing>
 
 
 
+TODO
++++++++++
+
+- Start and finish the assets documentation
 
 What is Oniros?
 ++++++++++++++++++
@@ -40,16 +45,17 @@ What does it include/require to work?
 
 **Includes**
 
-- Sass structure
-- Sass Mixins
+- Sass structure 
+- Susy
+- Sass Mixins (Juice)
 - Npm Scripts workflow
-- Slick Slider
+- Slick Slider (with bower)
 
 **Requires**
 
 - npm
 - bower (to install slick slider)
-- sass
+
 
 
 Why Oniros?

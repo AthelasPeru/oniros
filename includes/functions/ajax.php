@@ -1,4 +1,22 @@
 <?php 
+
+function set_ajax_vars(){
+	/* This is an example, here we are making PHP WP data avaliable to our
+	* main script. 
+	* https://codex.wordpress.org/Function_Reference/wp_localize_script
+	* @'ajaxurl' defines the endpoint availiable for ajax so the JS file can access it.
+	* @'wp_query' if a user defined variable which can contain ANY WP data you want to send, I chose to send WP query here just because.
+	*/
+	global $wp_query;
+	    wp_localize_script( 'main', 'ajaxquery', array(
+			'ajaxurl' => admin_url( 'admin-ajax.php' ),
+	    	'wp_query' => json_encode($wp_query->query)
+	    	)
+		);
+}
+add_action( 'wp_enqueue_scripts', 'set_ajax_vars');
+
+
 function my_ajax_query() {
 	/*
 	* Makes a custom query and builds an array to return as json with the required information
@@ -8,8 +26,7 @@ function my_ajax_query() {
 	*/
 	$query = new WP_Query(
 		array(
-			"post_type"=>$_POST["post_type"],
-			'category_name' => $_POST["category"],
+			"post_type"=>$_POST["post_type"],			
 			"posts_per_page"=> isset($_POST["posts_per_page"])? $_POST["posts_per_page"] : -1
 			)
 	);
@@ -21,13 +38,7 @@ function my_ajax_query() {
 		
 		$post_data = array(
 			"title"=>$post->post_title,
-			"url"=>get_permalink($post->ID),
-			"excerpt"=>get_the_excerpt($post->ID),
-			// This is an example on how to access a custom image size for a custom field of type
-			// gallery created using ACF. http://www.advancedcustomfields.com/resources/gallery/
-			"custom_img"=>get_field("gallery", $post->ID)[0]["sizes"]["archive_thumb"], 
-			"date" =>get_the_date($post->ID)
-
+			"url"=>get_permalink($post->ID)
 		);
 		array_push($toReturn, $post_data);
 	}
