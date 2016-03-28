@@ -89,6 +89,9 @@ require_once("includes/functions/ajax.php");
 // Include Taxonomies
  require_once("includes/functions/taxonomies.php");
 
+// Include Theme Tweaks
+require_once("includes/functions/tweaks.php");
+
 // Include Admin modifcations
  require_once("includes/functions/admin-tweaks.php");
 
