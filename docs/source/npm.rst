@@ -35,7 +35,7 @@ Css
 
 The css of Oniros is divided in three modular parts. 
 
-**admin** refers to the wordpress admin panel styles.
+
 **login** refers to the wordpress login screen.
 **main** refers to the Wordpress theme.
 
