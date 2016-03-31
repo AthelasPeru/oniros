@@ -1,8 +1,8 @@
 <?php 
 // featured image activation and then sizing
 
-add_action( 'init', 'athelas_image_support' );
-function athelas_image_support(){
+add_action( 'init', 'oniros_image_support' );
+function oniros_image_support(){
 
 	add_theme_support( 'post-thumbnails' );
 
@@ -12,8 +12,4 @@ function athelas_image_support(){
 
 	//                name             width height crop?
 	add_image_size( 'image_size_name', 400, 400, true);
-
 }
-	
-
-?>

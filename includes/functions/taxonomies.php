@@ -34,4 +34,3 @@ function athelas_themes_taxonomy() {
 }
 add_action( 'init', 'athelas_themes_taxonomy');
 */
-?>
