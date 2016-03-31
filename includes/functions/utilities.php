@@ -1,7 +1,6 @@
 <?php
-
 //Para los thumbnails
-function athelas_thumbnail($image_field, $image_size, $classes=array(''), $ID=null){
+function oniros_thumbnail($image_field, $image_size, $classes=array(''), $ID=null){
 
 	
 	if (!function_exists('get_all_classes')) {
@@ -53,11 +52,8 @@ function athelas_thumbnail($image_field, $image_size, $classes=array(''), $ID=nu
 	};
 };
 
-
-
-
 //Función para convertir el custom_field('xx') en un excerpt de 50 palabras máximo
-function get_athelas_custom_field_excerpt($title, $chars) {
+function get_oniros_custom_field_excerpt($title, $chars) {
 	global $post;
 	$text = get_field($title);
 	if ( '' != $text ) {
@@ -94,7 +90,7 @@ function the_excerpt_max_charlength($charlength) {
 
 
 //BreadCrumbs :D
-function athelas_breadcrumb() {
+function oniros_breadcrumb() {
 	$url = $_SERVER["REQUEST_URI"];
 	$urlArray = array_slice(explode("/",$url), 0, -1);
 
@@ -112,9 +108,10 @@ function athelas_breadcrumb() {
 
 
 // Numbered Pagination
-if ( !function_exists( 'athelas_pagination' ) ) {
+if ( !function_exists( 'oniros_pagination' ) ) {
 //http://www.wpexplorer.com/pagination-wordpress-theme/
-	function athelas_pagination() {
+	function oniros_pagination() 
+	{
 		
 		$prev_arrow = is_rtl() ? '>' : '<';
 		$next_arrow = is_rtl() ? '<;' : '>';
@@ -149,7 +146,8 @@ if ( !function_exists( 'athelas_pagination' ) ) {
 
 
 //Related posts function
-function related_posts_args($original_post, $posts_per_page){
+function related_posts_args($original_post, $posts_per_page)
+{
 	$post = $original_post;
 	if ($post == ''){
 		if(is_page('blog-archive') ){
@@ -162,14 +160,14 @@ function related_posts_args($original_post, $posts_per_page){
 	} else {
 		$post_type = get_post_type($post);
 	}
-	//Get the tags (¿Categories?) of the post
+	//Get the tags (Categories?) of the post
 	// $tags = wp_get_post_tags($post->ID);
 	$args=array(
 	// 'tag__in' => array($tags),
 	'post__not_in' => array($post->ID),
 	'posts_per_page'=>$posts_per_page,
 	'post_type' => array($post_type),
-	'meta_key' => 'athelas_post_views_count',
+	'meta_key' => 'oniros_post_views_count',
 	'orderby' => 'meta_value_num', 
 	'order' => 'DESC'  
 	);
@@ -178,7 +176,8 @@ function related_posts_args($original_post, $posts_per_page){
 
 
 
-function athelas_show_categories($br=true){
+function oniros_show_categories($br=true)
+{
 	global $post;
 	$categories = get_the_category();
 
@@ -203,34 +202,26 @@ function athelas_show_categories($br=true){
 	echo '</p>';
 }
 
-
-
-// Deberiamos tener una función que una wp_nav_menu() con Foundation.
-// http://foundation.zurb.com/forum/posts/438-enabling-foundation-5-nav-with-wordpress-menus
-
-
-
-
-
-
+// ESEN
 // Ojo: Esta funcion arregla TODO en la vida = > Arregla Pagination en custom-post-types! 
-function add_custom_posts_per_page( &$q ) {
-	global $custom_post_types;
+// function add_custom_posts_per_page( &$q ) {
+// 	global $custom_post_types;
 
-	$custom_post_types = array("news");
-	if ( $q->is_archive ) { // any archive
-		if ( in_array ($q->query_vars['post_type'], $custom_post_types) ) {
-			$q->set( 'posts_per_page', 5 );
-		}
-	}
-	return $q;
-}
+// 	$custom_post_types = array("news");
+// 	if ( $q->is_archive ) { // any archive
+// 		if ( in_array ($q->query_vars['post_type'], $custom_post_types) ) {
+// 			$q->set( 'posts_per_page', 5 );
+// 		}
+// 	}
+// 	return $q;
+// }
 
-add_filter('parse_query', 'add_custom_posts_per_page');
+// add_filter('parse_query', 'add_custom_posts_per_page');
 
 
-function athelas_set_post_views($postID) {
-    $count_key = 'athelas_post_views_count';
+function oniros_set_post_views($postID) 
+{
+    $count_key = 'oniros_post_views_count';
     $count = get_post_meta($postID, $count_key, true);
     if($count==''){
         $count = 0;
@@ -246,19 +237,21 @@ remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
 
 
-function athelas_track_post_views ($post_id) {
+function oniros_track_post_views ($post_id) 
+{
     if ( !is_single() ) return;
     if ( empty ( $post_id) ) {
         global $post;
         $post_id = $post->ID;    
     }
-    athelas_set_post_views($post_id);
+    oniros_set_post_views($post_id);
 }
-add_action( 'wp_head', 'athelas_track_post_views');
+add_action( 'wp_head', 'oniros_track_post_views');
 
 
-function athelas_get_post_views($postID){
-    $count_key = 'athelas_post_views_count';
+function oniros_get_post_views($postID)
+{
+    $count_key = 'oniros_post_views_count';
     $count = get_post_meta($postID, $count_key, true);
     if($count==''){
         delete_post_meta($postID, $count_key);
@@ -267,5 +260,3 @@ function athelas_get_post_views($postID){
     }
     return $count.' Views';
 }
-
-?>
