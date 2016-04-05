@@ -24,6 +24,7 @@ Contents:
    npm Scripts <npm>   
    .htaccess file <htaccess>
    Contributing <contributing>
+   Suggested Plugins <plugins>
 
 
 
