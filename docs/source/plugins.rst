@@ -9,7 +9,6 @@ Forms
 ********
 
 - **Contact-Form-7**: 
-
 - **Flamingo**: 
 
 
@@ -21,7 +20,7 @@ Security
 Content
 ***********
 
-- **Advanced Custom Fields**
+- **Advanced Custom Fields**: 
 
 Maintenance
 ***************
@@ -31,19 +30,24 @@ Maintenance
 Migrations
 *************
 
-- **WP Clone By WP Academy**
+- **WP Clone By WP Academy**: 
+
+Media:
+**********
+
+- `Optimize Images Resizing <https://wordpress.org/plugins/optimize-images-resizing/>`_
 
 Backup
 *********
 
-- **BackWPup**
+- **BackWPup**: 
 
 SEO
 *****
 
-- **Yoast SEO**
+- **Yoast SEO**: 
 
 SSL
 **********
 
-- **WP Force SSL**
+- **WP Force SSL**: 
