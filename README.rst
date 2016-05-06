@@ -77,3 +77,7 @@ Who is Oniros for?
 
 Oniros is for WP developers that want to build any kind of website with **Wordpress**, use Custom Post Types regularly and doesn't necesarily build Blog like websites.
 It's also for Wordpress Developers that tend to work with Frontend developers that deliver static code to them.
+
+
+Changelog
++++++++++++++
