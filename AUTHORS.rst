@@ -1,8 +1,8 @@
 Authors
 =========
 
-- Pedro Baumann `ondoheer <http://www.ondoheer.com>`_
-- Esen Espinosa 
+- Pedro Baumann `ondoheer <https://www.ondoheer.com>`_
+- Renato Centeno `elnato <https://github.com/elnato>`_
 
 Inspirations
 ===============
