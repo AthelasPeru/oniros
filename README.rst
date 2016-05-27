@@ -81,3 +81,8 @@ It's also for Wordpress Developers that tend to work with Frontend developers th
 
 Changelog
 +++++++++++++
+
+v0.7
+*******
+
+- Renamed functions

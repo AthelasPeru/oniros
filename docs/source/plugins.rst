@@ -32,7 +32,7 @@ Migrations
 
 - **WP Clone By WP Academy**: `WP Clone <https://wordpress.org/plugins/wp-clone-by-wp-academy/>`_ is the easiest, fastest and most secure way to move or copy a WordPress site to another domain or hosting server. You can also use it to move your site to/from local server hosting, to create copies of your site for development or testing purposes, to backup your site, and to install pre-configured versions of WordPress.
 
-Media:
+Media
 **********
 
 - `Optimize Images Resizing <https://wordpress.org/plugins/optimize-images-resizing/>`_

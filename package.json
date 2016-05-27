@@ -28,7 +28,8 @@
     "watch:all": "parallelshell 'npm run serve' 'npm run watch:all:css' 'npm run watch:js'",
     "build:main": "parallelshell 'npm run all:build:js' 'npm run main:build:css' 'npm run favicon' 'npm run imagemin' ",
     "build:login": "parallelshell 'npm run all:build:js' 'npm run login:build:css' 'npm run favicon' 'npm run imagemin' ",
-    "build:all": "parallelshell 'npm run all:build:js' 'npm run all:build:css' 'npm run favicon' 'npm run imagemin' "
+    "build:all": "parallelshell 'npm run all:build:js' 'npm run all:build:css' 'npm run favicon' 'npm run imagemin' ",
+    "zip": "bestzip oniros.zip *.php includes fonts dist bower_components style.css screenshot.png"
   },
   "repository": {
     "type": "git",
