@@ -31,9 +31,9 @@
     "watch:all": "parallelshell 'npm run watch:all:css' 'npm run watch:js'",
     "prebuild:all": "exec-notify echo Building all project files: CSS, JavaScript, Generating Favicons and optimizing images",    
     "build:all": "parallelshell 'npm run all:build:js' 'npm run all:build:css' 'npm run favicon' 'npm run imagemin' ",
-    "postbuild:all":"exec-notify echo All items build, maybe it would be a goog time to build the project zip? Remeber, it's just npm run zip",
+    "postbuild:all":"exec-notify echo All items build, maybe it would be a goog time to build the project zip? Remeber, its just npm run zip",
     "zip": "bestzip oniros.zip *.php includes fonts dist bower_components style.css screenshot.png",
-    "postzip":"Theme zip completed"
+    "postzip":"exec-notify echo Theme zip completed"
   },
   "repository": {
     "type": "git",
