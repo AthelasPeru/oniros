@@ -1,8 +1,8 @@
 <?php 
-	/*
-	 * Base for the Post posttype archive.
-	*/
- ?>
+/**
+ * Base for the Post posttype archive.
+ */
+?>
 <?php get_header(); ?>
 
 	<!-- Begin of loop -->
