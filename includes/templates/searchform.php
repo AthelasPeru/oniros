@@ -1,9 +1,14 @@
-
 <?php 
-
-// this is the searchform, you can restyle it anyway you want, but keep in mind that
-// the search input NEEDS to be called "s" and the form action and method need to stay that way.
-
+/**
+ * This is the searchform, you can restyle it anyway you want, 
+ * but keep in mind that the search input NEEDS to be called "s" 
+ * and the form action and method need to stay that way.
+ * 
+ * If you want to remove templates, 
+ * just delete the templates folder and 
+ * replace the function get_template_part with the contents 
+ * of the this file.
+ */
  ?>
 
 

@@ -1,262 +1,178 @@
 <?php
-//Para los thumbnails
-function oniros_thumbnail($image_field, $image_size, $classes=array(''), $ID=null){
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
+
+/**
+ * Oniros Utils class
+ *
+ * This class contains several functions maybe you need to use.
+ *
+ * @package Oniros
+ * @subpackage Includes
+ * @author elnato
+ *
+ * @since 1.0.0
+ */
+class Oniros_Utils {
 
 	
-	if (!function_exists('get_all_classes')) {
-		function get_all_classes($classes, $height, $width, $image_size){
-			$all_classes = '';
-			foreach ($classes as $value) {
-				$all_classes = $all_classes.$value.' ';
-			};
-			$all_classes = $all_classes.' height-'.$height.' width-'.$width.' size-'.$image_size;
-			return $all_classes;
-		};
-	}
-	if( get_field($image_field ) ){
-		$image = get_field($image_field);
-	}elseif ( get_sub_field($image_field ) ) {
-		$image = get_sub_field($image_field);
-	}
-	elseif ( get_sub_field($image_field, $ID ) ) {
-		$image = get_sub_field($image_field, $ID);
-	}
-	elseif ( get_field($image_field , $ID) ) {
-		$image = get_field($image_field, $ID);
-	}
-	else {
-		$image_class = get_all_classes($classes, 'placeholder', 'placeholder', $image_size);
-		echo '<img class="'.$image_class.'" src="'. get_stylesheet_directory_uri().'/bgimage/'.$image_size.'.jpg" alt"placeholder"/>';
-	}
-	
-
-	if( !empty($image) ){
-		$url = $image['url'];
-		$title = $image['title'];
-		$alt = $image['alt'];
-
-		$size = $image_size;
-		$thumb = $image['sizes'][$size];
-		$width = $image['sizes'][ $size . '-width' ];
-		$height = $image['sizes'][ $size . '-height' ];
-
-		$image_class = get_all_classes($classes, $height, $width, $image_size);
-		
-		//if( is_single() ){
-		//	echo '<a href="'.$url.'" title="'.$title.'">';
-		//}
-		echo '<img class="'.$image_class.'" src="'.$thumb.'" title="'.$title.'" alt="'.$alt.'"/>';
-		//if( is_single() ){
-		//	echo '</a>';
-		//}
-	};
-};
-
-//Función para convertir el custom_field('xx') en un excerpt de 50 palabras máximo
-function get_oniros_custom_field_excerpt($title, $chars) {
-	global $post;
-	$text = get_field($title);
-	if ( '' != $text ) {
-		$text = strip_shortcodes( $text );
-		$text = apply_filters('the_content', $text);
-		$text = str_replace(']]>', ']]>', $text);
-		$excerpt_length = $chars; // in words
-		$excerpt_more = apply_filters('excerpt_more', ' ' . '...');
-		$text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
-	}
-	return apply_filters('the_excerpt', $text);
-}
-
-
-function the_excerpt_max_charlength($charlength) {
-	$excerpt = get_the_excerpt();
-	$charlength++;
-
-	if ( mb_strlen( $excerpt ) > $charlength ) {
-		$subex = mb_substr( $excerpt, 0, $charlength - 5 );
-		$exwords = explode( ' ', $subex );
-		$excut = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
-		if ( $excut < 0 ) {
-			echo mb_substr( $subex, 0, $excut );
-		} else {
-			echo $subex;
-		}
-		echo '[...]';
-	} else {
-		echo $excerpt;
-	}
-}
-
-
-
-//BreadCrumbs :D
-function oniros_breadcrumb() {
-	$url = $_SERVER["REQUEST_URI"];
-	$urlArray = array_slice(explode("/",$url), 0, -1);
-
-	// Set $dir to the first value
-	$dir = array_shift($urlArray);
-	echo '<div class="breadcrumb-wrapper"><span class="breadcrumb-content"><a href="'.get_bloginfo('url').'">Home</a></span>';
-	foreach($urlArray as $text) {
-		$dir .= "/$text";
-		echo ' <span class="breadcrumb-separator">/</span> <span class="breadcrumb-content"><a href="'.$dir.'">' . ucwords(strtr($text, array('_' => ' ', '-' => ' '))) . '</a></span>';
-	}
-	echo '</div>';
-}
-
-
-
-
-// Numbered Pagination
-if ( !function_exists( 'oniros_pagination' ) ) {
-//http://www.wpexplorer.com/pagination-wordpress-theme/
-	function oniros_pagination() 
+	/**
+	 * Función para convertir un custom_field('xx') en un excerpt de n palabras
+	 * @param  [type] $field_name 
+	 * @param  [type] $num_words  
+	 * @return [type]             
+	 */
+	function get_custom_field_excerpt($field_name, $num_words) 
 	{
-		
-		$prev_arrow = is_rtl() ? '>' : '<';
-		$next_arrow = is_rtl() ? '<;' : '>';
-		
-		global $wp_query;
-		$total = $wp_query->max_num_pages;
-		$big = 999999999; // need an unlikely integer
-		if( $total > 1 )  {
-			 if( !$current_page = get_query_var('paged') ){
-				 $current_page = 1;
-			 }
-			 if( get_option('permalink_structure') ) {
-				 $format = 'page/%#%/';
-			 } else {
-				 $format = '&paged=%#%';
-			 }
-			echo paginate_links(array(
-				'base'					=> str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-				'format'				=> $format,
-				'current'				=> max( 1, get_query_var('paged') ),
-				'total' 				=> $total,
-				'mid_size'				=> 3,
-				'type' 					=> 'list',
-				'prev_text'				=> $prev_arrow,
-				'next_text'				=> $next_arrow,
-			 ) );
+		global $post;
+		$text = get_field($field_name);
+		if ( !empty($text) ) {
+			$text = strip_shortcodes( $text );
+			$text = apply_filters('the_content', $text);
+			$text = str_replace(']]>', ']]>', $text);
+			$excerpt_more = apply_filters('excerpt_more', ' ' . '...');
+			$text = wp_trim_words( $text, $num_words, $excerpt_more );
+		}
+		return apply_filters('the_excerpt', $text);
+	}
+	
+	/**
+	 * [the_excerpt_max_charlength description]
+	 * @param  [type] $charlength [description]
+	 * @return [type]             [description]
+	 * 
+	 * @link https://codex.wordpress.org/Function_Reference/get_the_excerpt
+	 */
+	function the_excerpt_max_charlength($charlength) 
+	{
+		$excerpt = get_the_excerpt();
+		$charlength++;
+
+		if ( mb_strlen( $excerpt ) > $charlength ) {
+			$subex = mb_substr( $excerpt, 0, $charlength - 5 );
+			$exwords = explode( ' ', $subex );
+			$excut = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
+			if ( $excut < 0 ) {
+				echo mb_substr( $subex, 0, $excut );
+			} else {
+				echo $subex;
+			}
+			echo '[...]';
+		} else {
+			echo $excerpt;
 		}
 	}
 	
-}
+	/**
+	 * 
+	 * @param  [type] $postID [description]
+	 * @return [type]         [description]
+	 */
+	function set_post_views($postID) 
+	{
+	    $count_key = 'post_views_count';
+	    $count = get_post_meta($postID, $count_key, true); //return the value
+	    if ( empty($count) ){
+	        $count = 1;
+	        delete_post_meta($postID, $count_key);
+	        add_post_meta($postID, $count_key, $count);
+	    } else {
+	    	$count++;
+	        update_post_meta($postID, $count_key, $count);
+	    }
+	}
+	//To keep the count accurate, lets get rid of prefetching
+	remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
+	function track_post_views($post_id) 
+	{
+	    if (!is_single()) return;
+	    if (empty($post_id)) {
+	        global $post;
+	        $post_id = $post->ID;    
+	    }
+	    set_post_views($post_id);
+	}
+	add_action( 'wp_head', 'track_post_views');
 
+	function get_post_views($postID)
+	{
+	    $count_key = 'post_views_count';
+	    $count = get_post_meta($postID, $count_key, true);
+	    if ($count==''){
+	        delete_post_meta($postID, $count_key);
+	        add_post_meta($postID, $count_key, '0');
+	        return __("0 Views");
+	    }
+	    return $count.' '.__('Views');
+	}
 
-//Related posts function
-function related_posts_args($original_post, $posts_per_page)
-{
-	$post = $original_post;
-	if ($post == ''){
-		if(is_page('blog-archive') ){
-			$post_type = 'post';	
-		} elseif (is_single('post')) {
-			$post_type = 'post';
-		}else{
-			$post_type = get_post_type($post);
+	public static function pagination_numeric_posts_nav() {
+
+		if( is_singular() )
+			return;
+
+		global $wp_query;
+
+		/** Stop execution if there's only 1 page */
+		if( $wp_query->max_num_pages <= 1 )
+			return;
+
+		$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+		$max   = intval( $wp_query->max_num_pages );
+
+		/**	Add current page to the array */
+		if ( $paged >= 1 )
+			$links[] = $paged;
+
+		/**	Add the pages around the current page to the array */
+		if ( $paged >= 3 ) {
+			$links[] = $paged - 1;
+			$links[] = $paged - 2;
 		}
-	} else {
-		$post_type = get_post_type($post);
+
+		if ( ( $paged + 2 ) <= $max ) {
+			$links[] = $paged + 2;
+			$links[] = $paged + 1;
+		}
+
+						// <li><a href="" class=""><i class="fa fa-chevron-right"></i></a></li>
+		echo '<div class="navigation"><ul class="pagination">' . "\n";
+
+		/**	Previous Post Link */
+		if ( get_previous_posts_link() )
+			printf( '<li>%s</li>' . "\n", get_previous_posts_link() );
+
+		/**	Link to first page, plus ellipses if necessary */
+		if ( ! in_array( 1, $links ) ) {
+			$class = 1 == $paged ? ' class="active"' : '';
+
+			printf( '<li%s><span><a href="%s" class="prev">%s</a></span></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
+
+			if ( ! in_array( 2, $links ) )
+				echo '<li>…</li>';
+		}
+
+		/**	Link to current page, plus 2 pages in either direction if necessary */
+		sort( $links );
+		foreach ( (array) $links as $link ) {
+			$class = $paged == $link ? ' class="active"' : '';
+			printf( '<li%s><span><a href="%s" class="next">%s</a></span></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
+		}
+
+		/**	Link to last page, plus ellipses if necessary */
+		if ( ! in_array( $max, $links ) ) {
+			if ( ! in_array( $max - 1, $links ) )
+				echo '<li>…</li>' . "\n";
+
+			$class = $paged == $max ? ' class="active"' : '';
+			printf( '<li%s><span><a href="%s">%s</a></span></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
+		}
+
+		/**	Next Post Link */
+		if ( get_next_posts_link() )
+			printf( '<li>%s</li>' . "\n", get_next_posts_link() );
+
+		echo '</ul></div>' . "\n";
+
 	}
-	//Get the tags (Categories?) of the post
-	// $tags = wp_get_post_tags($post->ID);
-	$args=array(
-	// 'tag__in' => array($tags),
-	'post__not_in' => array($post->ID),
-	'posts_per_page'=>$posts_per_page,
-	'post_type' => array($post_type),
-	'meta_key' => 'oniros_post_views_count',
-	'orderby' => 'meta_value_num', 
-	'order' => 'DESC'  
-	);
-	return $args;
-}
-
-
-
-function oniros_show_categories($br=true)
-{
-	global $post;
-	$categories = get_the_category();
-
-	$counter = 0;
-	echo '<p>';
-	echo '<strong class="categories-label">CATEGORIAS: </strong>';
-	echo '<br class="hide-for-large-up">';
-	if($br){
-		echo '<br>';
-	}
-	if($categories){
-		foreach( $categories as $category ) { 
-			if ($category->name != 'Proximo evento') {
-				if($counter != 0){
-					echo '<span class="blog-categories separator"> / </span>';
-				}
-				$counter ++;
-				echo '<span class="blog-categories"><a href="'.get_category_link( $category->term_id ).'" rel="bookmark" title="'.sprintf( __( "View all posts in %s" ), $category->name ).'">'.$category->name.'</a></span>';   
-			} // if($categories->name not proximo evento)
-		} // foreach($categories)
-	} // if($categories)
-	echo '</p>';
-}
-
-// ESEN
-// Ojo: Esta funcion arregla TODO en la vida = > Arregla Pagination en custom-post-types! 
-// function add_custom_posts_per_page( &$q ) {
-// 	global $custom_post_types;
-
-// 	$custom_post_types = array("news");
-// 	if ( $q->is_archive ) { // any archive
-// 		if ( in_array ($q->query_vars['post_type'], $custom_post_types) ) {
-// 			$q->set( 'posts_per_page', 5 );
-// 		}
-// 	}
-// 	return $q;
-// }
-
-// add_filter('parse_query', 'add_custom_posts_per_page');
-
-
-function oniros_set_post_views($postID) 
-{
-    $count_key = 'oniros_post_views_count';
-    $count = get_post_meta($postID, $count_key, true);
-    if($count==''){
-        $count = 0;
-        delete_post_meta($postID, $count_key);
-        add_post_meta($postID, $count_key, '0');
-    }else{
-        $count++;
-        update_post_meta($postID, $count_key, $count);
-    }
-}
-//To keep the count accurate, lets get rid of prefetching
-remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
-
-
-
-function oniros_track_post_views ($post_id) 
-{
-    if ( !is_single() ) return;
-    if ( empty ( $post_id) ) {
-        global $post;
-        $post_id = $post->ID;    
-    }
-    oniros_set_post_views($post_id);
-}
-add_action( 'wp_head', 'oniros_track_post_views');
-
-
-function oniros_get_post_views($postID)
-{
-    $count_key = 'oniros_post_views_count';
-    $count = get_post_meta($postID, $count_key, true);
-    if($count==''){
-        delete_post_meta($postID, $count_key);
-        add_post_meta($postID, $count_key, '0');
-        return "0 Views";
-    }
-    return $count.' Views';
 }
