@@ -1,14 +1,16 @@
 <?php 
-
-// Add the sidebar code here, it should be called with
-
-// get_template_part( "includes/templates/sidebar" );
-
-// if you need to create different sidebars for different pages, then create a new file here 
-// with the sidebar-<slug>.php form. then call it with
-
-// get_template_part( "includes/templates/sidebar", "slug");
-
+/**
+ * Add the sidebar code here, it should be called with
+ * get_template_part( "includes/templates/sidebar" );
+ * if you need to create different sidebars for different pages, then create a new file here
+ * with the sidebar-<slug>.php form. then call it with
+ * get_template_part( "includes/templates/sidebar", "slug");
+ * 
+ * If you want to remove templates, 
+ * just delete the templates folder and 
+ * replace the function get_template_part with the contents 
+ * of the this file.
+ */
  ?>
 
  <aside id="sidebar" class="sidebar" role="complementary">

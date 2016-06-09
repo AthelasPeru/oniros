@@ -12,8 +12,8 @@ function oniros_scripts(){
 	if(!WP_DEBUG){
 		// Our own stylesheet
 		wp_enqueue_style('app', get_stylesheet_directory_uri().'/dist/css/main.min.css');	
-		// Slick
-		wp_enqueue_script('slick', get_stylesheet_directory_uri().'/bower_components/slick-carousel/slick/slick.min.js', array('jquery'), null, true );
+		// // Slick
+		// wp_enqueue_script('slick', get_stylesheet_directory_uri().'/bower_components/slick-carousel/slick/slick.min.js', array('jquery'), null, true );
 		// Own script
 		wp_enqueue_script('main',get_stylesheet_directory_uri().'/dist/js/app.min.js', array('jquery', "slick"), null, true);
 		// slick slider stylesheet. Comment it if slick won't be used
@@ -21,8 +21,8 @@ function oniros_scripts(){
 	} else{
 		// Our own stylesheet
 		wp_enqueue_style('app', get_stylesheet_directory_uri().'/dist/css/main.css');	
-		// Slick
-		wp_enqueue_script('slick', get_stylesheet_directory_uri().'/bower_components/slick-carousel/slick/slick.js', array('jquery'), null, true );
+		// // Slick
+		// wp_enqueue_script('slick', get_stylesheet_directory_uri().'/bower_components/slick-carousel/slick/slick.js', array('jquery'), null, true );
 		// Own script
 		wp_enqueue_script('main',get_stylesheet_directory_uri().'/dist/js/app.js', array('jquery', 'slick'), null, true);
 		// slick slider stylesheet. Comment it if slick won't be used
