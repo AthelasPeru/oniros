@@ -1,6 +1,6 @@
 <?php 
 
-// Add scripts and styles We have added many styles and scripts that are ussually used,
+// Add scripts and styles
 // feel free to uncomment those you won't use.
 function oniros_scripts(){
 	/*
@@ -9,24 +9,26 @@ function oniros_scripts(){
 
 	// WP required stylesheet
 	wp_enqueue_style('base', get_stylesheet_directory_uri().'/style.css' );
-	if(!WP_DEBUG){
-		// Our own stylesheet
+	
+	if( !WP_DEBUG ) {
+		
+		// Our own stylesheet (minimized)
 		wp_enqueue_style('app', get_stylesheet_directory_uri().'/dist/css/main.min.css');	
-		// // Slick
-		// wp_enqueue_script('slick', get_stylesheet_directory_uri().'/bower_components/slick-carousel/slick/slick.min.js', array('jquery'), null, true );
-		// Own script
-		wp_enqueue_script('main',get_stylesheet_directory_uri().'/dist/js/app.min.js', array('jquery', "slick"), null, true);
-		// slick slider stylesheet. Comment it if slick won't be used
-		wp_enqueue_style('slick_style', get_stylesheet_directory_uri().'/bower_components/slick-carousel/slick/slick.min.css');	
+		
+		// Own script (uglyfied)
+		wp_enqueue_script('main',get_stylesheet_directory_uri().'/dist/js/app.min.js', array('jquery'), null, true);
+		
+		//Add other scripts here
+
 	} else{
-		// Our own stylesheet
+		
+		// Our own stylesheet 
 		wp_enqueue_style('app', get_stylesheet_directory_uri().'/dist/css/main.css');	
-		// // Slick
-		// wp_enqueue_script('slick', get_stylesheet_directory_uri().'/bower_components/slick-carousel/slick/slick.js', array('jquery'), null, true );
-		// Own script
-		wp_enqueue_script('main',get_stylesheet_directory_uri().'/dist/js/app.js', array('jquery', 'slick'), null, true);
-		// slick slider stylesheet. Comment it if slick won't be used
-		wp_enqueue_style('slick_style', get_stylesheet_directory_uri().'/bower_components/slick-carousel/slick/slick.css');
+		
+		// Own script 
+		wp_enqueue_script('main',get_stylesheet_directory_uri().'/dist/js/app.js', array('jquery'), null, true);
+		
+		// Add other scripts here
 	}
 }
 add_action( 'wp_enqueue_scripts', 'oniros_scripts');
