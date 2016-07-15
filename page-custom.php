@@ -6,8 +6,6 @@ Template Name: Page Base Template Name
 * just do it using the page-<slug>.php form. instead of page-base.php
 * For more info: http://codex.wordpress.org/Page_Templates
 */
-
-
  ?>
  <?php get_header(); ?>
 
