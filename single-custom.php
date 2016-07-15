@@ -14,7 +14,8 @@
 
 	<?php else: ?>
 
-	<?php endif; wp_reset_postdata();?>
+	<?php endif;?>
+	<?php wp_reset_postdata(); ?>
 	
  <?php get_footer(); ?>
 

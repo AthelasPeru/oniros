@@ -20,5 +20,3 @@ Print the strings on the templates using
 pll_e("$string");
 
 */
-
- ?>

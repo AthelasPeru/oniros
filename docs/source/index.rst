@@ -1,7 +1,37 @@
-Documentation
-+++++++++++++++++
+.. tindalos documentation master file, created by
+   sphinx-quickstart on Thu Feb  4 15:01:43 2016.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
 
-`READ THE DOCUMENTATION HERE <http://www.athelas.pe/oniros>`_
+Welcome to Oniros's documentation!
+====================================
+
+`Get Oniros <https://github.com/AthelasPeru/oniros>`_
+
+Overview
+------------
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   The Workflow <workflow>
+   Static Site Folder <static_site>   
+   Wordpress Files and Functions <wordpress_files>
+   Includes Folder <includes>
+   Assets (SCSS, JS, Images, Sprites) <assets>
+   npm Scripts <npm>   
+   .htaccess file <htaccess>
+   Contributing <contributing>
+   Suggested Plugins <plugins>
+
+
+
+TODO
++++++++++
+
+- Start and finish the assets documentation
 
 What is Oniros?
 ++++++++++++++++++
@@ -16,23 +46,24 @@ What does it include/require to work?
 
 **Includes**
 
-- Sass structure
-- Sass Mixins
+- Sass structure 
+- Susy
+- Sass Mixins (Juice)
 - Npm Scripts workflow
-- Slick Slider
+- Slick Slider (with bower)
 
 **Requires**
 
 - npm
 - bower (to install slick slider)
-- sass
+
 
 
 Why Oniros?
 +++++++++++++++
 
 We know there are a lot of other **Wordpress Templates** out there. For example, many of our developers worked with `Bones <http://themble.com/bones/>`_ template in the past. But we found ourselves erasing most of it's markup and modifying the way they did some stuff.
-Also, we thought it be pretty nice to add our **npm scripts build system** created for our **static** and `WordPress <http://wordpress.orgm/>`_ projects inspired on the great `Frontend Starter Kit <https://github.com/beatpixel/Frontend-StarterKit>`_. (we used to use gulp up until version 0.5)
+Also, we thought it be pretty nice to add our **npm scripts build system** created for our **static** and `WordPress <http://wordpress.orgm/>`_ projects inspired on the great `Frontend Starter Kit <https://github.com/beatpixel/Frontend-StarterKit>`_. (we used to use gulp up until version 5.0)
 
 Oh, you meant the name? Well, first, we are **huge** `The Sandman <http://www.vertigocomics.com/characters/the-sandman>`_ fans, second, our native tongue is spanish so we preffer the *spanification* of the name **Oneiros**. That's really it! Well and the fact that **Oniros** is the builder of dreams, and that's just awesome!
 
@@ -79,10 +110,15 @@ Oniros is for WP developers that want to build any kind of website with **Wordpr
 It's also for Wordpress Developers that tend to work with Frontend developers that deliver static code to them.
 
 
-Changelog
-+++++++++++++
 
-v0.7
-*******
 
-- Renamed functions
+
+
+
+
+
+Search Page
+==================
+
+* :ref:`search`
+

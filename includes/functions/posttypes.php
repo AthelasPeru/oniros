@@ -38,4 +38,3 @@ function athelas_register_routes() {
 	register_post_type( "routes", $args );
 
 }// End of athelas_register_routes()
-

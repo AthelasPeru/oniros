@@ -6,9 +6,8 @@ Call it via the functions file.
 
 
 */
+
 // Admin footer modification
-
-
 function replace_footer_admin () 
 {
     echo '<span id="footer-thankyou">Developed with love by: <a href="http://www.athelas.pe" target="_blank">Athelas</a> & <a href="" target="_blank">Designer/Developer name</a></span>';
@@ -46,17 +45,17 @@ Login Page Customization
 */
 
 //http://codex.wordpress.org/Plugin_API/Action_Reference/login_enqueue_scripts
-function athelas_login_css() {
-    wp_enqueue_style( 'athelas_login_css', get_template_directory_uri() . '/dist/css/login.min.css', false );
+function oniros_login_css() {
+    wp_enqueue_style( 'oniros_login_css', get_template_directory_uri() . '/dist/css/login.min.css', false );
 }
 
 // changing the logo link from wordpress.org to your site
-function athelas_login_url() {  return home_url(); }
+function oniros_login_url() {  return home_url(); }
 
 // changing the alt text on the logo to show your site name
-function athelas_login_title() { return get_option( 'blogname' ); }
+function oniros_login_title() { return get_option( 'blogname' ); }
 
 // calling it only on the login page
-add_action( 'login_enqueue_scripts', 'athelas_login_css', 10 );
-add_filter( 'login_headerurl', 'athelas_login_url' );
-add_filter( 'login_headertitle', 'athelas_login_title' );
+add_action( 'login_enqueue_scripts', 'oniros_login_css', 10 );
+add_filter( 'login_headerurl', 'oniros_login_url' );
+add_filter( 'login_headertitle', 'oniros_login_title' );
