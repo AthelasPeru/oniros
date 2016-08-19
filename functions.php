@@ -59,6 +59,9 @@ require_once("includes/functions/admin-tweaks.php");
 // Menus
 require_once("includes/functions/menu.php");
 
+// Widgets
+require_once("includes/functions/widgets.php");
+
 // Translations
 require_once("includes/functions/translation_strings.php");
 
