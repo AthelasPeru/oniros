@@ -20,7 +20,7 @@ function oniros_scripts(){
 		// wp_enqueue_style('slick_style', get_stylesheet_directory_uri().'/bower_components/slick-carousel/slick/slick.min.css');	
 	} else{
 		// Our own stylesheet
-		wp_enqueue_style('app', get_stylesheet_directory_uri().'/dist/css/main/main.css');	
+		wp_enqueue_style('app', get_stylesheet_directory_uri().'/dist/css/main.css');	
 		// // Slick
 		// wp_enqueue_script('slick', get_stylesheet_directory_uri().'/bower_components/slick-carousel/slick/slick.js', array('jquery'), null, true );
 		// Own script
@@ -56,12 +56,6 @@ require_once("includes/functions/admin-tweaks.php");
 
 // Menus
 require_once("includes/functions/menu.php");
-
-// Menus
-require_once("includes/functions/sidebars.php");
-
-// Menus
-require_once("includes/functions/customizer.php");
 
 // Translations
 require_once("includes/functions/translation_strings.php");

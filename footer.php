@@ -1,10 +1,12 @@
-
-
-
 <footer>
-
-	<!-- This should go at the end of your footer, it will load the JS scripts you set to load here in functions.php -->
-     <?php wp_footer(); ?>
+	<!-- dynamic_sidebar( 'sidebar1' );  -->
 </footer>
+	<?php
+   /* Always have wp_footer() just before the closing </body>
+    * tag of your theme, or you will break many plugins, which
+    * generally use this hook to reference JavaScript files.
+    */
+    wp_footer();
+	?>
 </body>
 </html>

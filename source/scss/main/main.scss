@@ -1,12 +1,7 @@
 // Add imports to all ouf your scss files
 
-// Susy, Sass framework http://susydocs.oddbird.net/
-// Juice, Mixin helpers https://github.com/kjbrum/juice
-@import "lib/susy/sass/susy", 
- 		"lib/juice/juice";
 @import "toolbox/colors",
 		"toolbox/fonts",
-		"toolbox/flexbox",
 		"toolbox/variables";
 @import "components/reset",
 		"components/base",

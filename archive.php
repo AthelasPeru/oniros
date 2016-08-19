@@ -1,19 +1,34 @@
-<?php 
-/**
- * Base for the Post posttype archive.
- */
-?>
 <?php get_header(); ?>
-
-	<!-- Begin of loop -->
-	<?php if(have_posts()): ?>
-		<?php while(have_posts()): the_post(); ?>
-
+	<main id="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+		<h1><?php post_type_archive_title(); ?></h1>
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			<article id="post-<?php the_ID(); ?>" role="article">
+				<header>
+					<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+					<?php the_title(); ?></a></h3>
+				</header>
+				<section>
+					<?php the_excerpt(); ?>
+				</section>
+				<footer>
+					<a href="<?php the_permalink() ?>">See more</a>
+				</footer>
+			</article>
 		<?php endwhile; ?>
-	<?php else: ?>
-		
-	<?php endif;?>
-	<?php wp_reset_postdata();  ?> 
-	<!-- End of loop -->
-
-<?php get_footer(); ?>
+				<!-- something -->
+		<?php else : ?>
+			<article id="post-not-found" class="hentry cf">
+				<header>
+					<h1>Oops, Post Not Found!></h1>
+				</header>
+				<section>
+					<p>Uh Oh. Something is missing. Try double checking things.</p>
+				</section>
+				<footer>
+					<p>This is the error message in the custom posty type archive template.</p>
+				</footer>
+			</article>
+		<?php endif; ?>
+	</main>
+	<?php get_sidebar(); ?>
+<?php get_footer(); ?> 

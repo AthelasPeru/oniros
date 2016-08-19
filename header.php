@@ -37,3 +37,8 @@
 </head>
 
 <body <?php body_class(); ?> >
+    <?php if ( get_theme_mod( 'oniros_logo' ) ) : ?>
+        <a href='<?php echo esc_url( home_url( '/' ) ); ?>' rel='home'>
+        <img src='<?php echo esc_url( get_theme_mod( 'oniros_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
+        </a>
+    <?php endif; ?>
