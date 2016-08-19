@@ -17,7 +17,7 @@ function set_ajax_vars(){
 add_action( 'wp_enqueue_scripts', 'set_ajax_vars');
 
 
-function my_ajax_query() {
+function my_ajax_custom_function() {
 	/*
 	* Makes a custom query and builds an array to return as json with the required information
 	* with parameters set in the JS ajax function
@@ -49,7 +49,7 @@ function my_ajax_query() {
 }
 // gives access to the ajax endpoint to not logged in users
 // https://codex.wordpress.org/Plugin_API/Action_Reference/wp_ajax_nopriv_(action)
-add_action( 'wp_ajax_nopriv_ajax_query', 'my_ajax_query' );
+add_action( 'wp_ajax_nopriv_custom_endpoint_name', 'my_ajax_custom_function' );
 // gives access to the ajax endpoint to logged in users
 // https://codex.wordpress.org/Plugin_API/Action_Reference/wp_ajax_(action)
-add_action( 'wp_ajax_ajax_query', 'my_ajax_query' );
+add_action( 'wp_ajax_custom_endpoint_name', 'my_ajax_custom_function' );
