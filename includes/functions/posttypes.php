@@ -22,7 +22,7 @@ function athelas_register_routes() {
 	$args = array(
 		"labels" => $labels,
 		"description" => "Post type Rutas",
-		'taxonomies' => array('tipo_rutas'),
+		'taxonomies' => array(),
 		"public" => true,
 		"show_ui" => true,
 		"has_archive" => true,
@@ -33,7 +33,7 @@ function athelas_register_routes() {
 		"hierarchical" => false,
 		"rewrite" => array( "slug" => "rutas", "with_front" => true ),
 		"query_var" => true,
-						"supports" => array( 'title', 'editor','post_tags' ),			
+		"supports" => array( 'thumbnail', 'excerpt', 'comments','title', 'revisions','author','editor','post_tags' ),	
 	);
 	register_post_type( "routes", $args );
 
