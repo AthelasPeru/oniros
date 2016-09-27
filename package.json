@@ -39,8 +39,7 @@
   },
   "author": "Athelas Peru",
   "license": "Apache-2.0",
-  "devDependencies": {
-    "@ondoheer/oniros_cli": "^1.0.2",
+  "devDependencies": {    
     "autoprefixer": "^6.3.3",
     "browser-sync": "^2.11.1",
     "cli-real-favicon": "0.0.5",
@@ -48,6 +47,7 @@
     "imagemin-cli": "^2.1.0",
     "node-sass": "^3.4.2",
     "onchange": "^2.0.0",
+    "oniros_cli": "^0.1.3",
     "parallelshell": "^2.0.0",
     "postcss-cli": "^2.5.1",
     "uglify-js": "^2.6.1",

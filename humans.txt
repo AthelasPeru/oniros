@@ -1,1 +1,1 @@
-/* Oniros was build by Athelas, http://www.athelas.pe */
+/* Oniros, build by Athelas, http://www.athelas.pe */
