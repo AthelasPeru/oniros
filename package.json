@@ -30,7 +30,8 @@
     "build:main:all": "parallelshell 'npm run main:build:css' 'npm run main:build:js'",
     "postbuild:all": "exec-notify echo All items build, maybe it would be a goog time to build the project zip? Remeber, its just npm run zip",
     "zip": "bestzip oniros.zip *.php includes fonts dist bower_components style.css screenshot.png",
-    "postzip": "exec-notify echo Theme zip completed"
+    "postzip": "exec-notify echo Theme zip completed",
+    "oniros": "oniros"
   },
   "repository": {
     "type": "git",
@@ -46,7 +47,7 @@
     "imagemin-cli": "^2.1.0",
     "node-sass": "^3.4.2",
     "onchange": "^2.0.0",
-    "oniros_cli": "^0.1.3",
+    "oniros_cli": "^0.1.5",
     "parallelshell": "^2.0.0",
     "postcss-cli": "^2.5.1",
     "uglify-js": "^2.6.1",
