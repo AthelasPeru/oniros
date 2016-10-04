@@ -47,7 +47,7 @@
     "imagemin-cli": "^2.1.0",
     "node-sass": "^3.4.2",
     "onchange": "^2.0.0",
-    "oniros_cli": "^0.1.5",
+    "oniros_cli": "^0.3.0",
     "parallelshell": "^2.0.0",
     "postcss-cli": "^2.5.1",
     "uglify-js": "^2.6.1",
