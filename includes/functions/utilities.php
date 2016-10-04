@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly.
  *
  * @package Oniros
  * @subpackage Includes
- * @author elnato
+ * @author athelas
  *
  * @since 1.0.0
  */
@@ -16,7 +16,7 @@ class Oniros_Utils {
 
 	
 	/**
-	 * Función para convertir un custom_field('xx') en un excerpt de n palabras
+	 * generate an excerpt for a  custom_field('xx') with n length
 	 * @param  [type] $field_name 
 	 * @param  [type] $num_words  
 	 * @return [type]             
