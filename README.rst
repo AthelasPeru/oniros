@@ -86,3 +86,10 @@ v0.7
 *******
 
 - Renamed functions
+
+
+TODO
++++++++++
+
+- Track Post Views
+- Most Viewed Articles

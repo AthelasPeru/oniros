@@ -14,7 +14,10 @@
    bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title('');?>
   </title>
 
-  <?php get_template_part( "includes/templates/icons" ); ?> 
+
+  <?php 
+  // FavIcons for different devices 
+  get_template_part( "includes/templates/icons" ); ?> 
   
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
     

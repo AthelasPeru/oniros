@@ -1,6 +1,6 @@
 {
   "name": "Oniros",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Athelas Wordpress Boilerplate",
   "main": "gulpfile.js",
   "scripts": {
@@ -49,7 +49,7 @@
     "imagemin-cli": "^2.1.0",
     "node-sass": "^3.4.2",
     "onchange": "^2.0.0",
-    "oniros_cli": "^0.3.0",
+    "oniros_cli": "^0.4.2",
     "parallelshell": "^2.0.0",
     "postcss-cli": "^2.5.1",
     "uglify-js": "^2.6.1",

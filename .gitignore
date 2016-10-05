@@ -2,6 +2,7 @@
 # Athelas theme
 #################
 
+.phpintel/
 bower_components/
 node_modules/
 dist/
