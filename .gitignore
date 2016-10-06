@@ -1,7 +1,8 @@
 ###############
 # Athelas theme
 #################
-
+*.jar
+sftp-config.json
 .phpintel/
 bower_components/
 node_modules/
