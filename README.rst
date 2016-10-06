@@ -59,8 +59,6 @@ In general
 - Automatically generate all favicons with realfavicongenerator.com
 - Optimize your images
 - Process and minimize your sass files
-- Create an svg spritesheet with it's scss classes directly embedded into your sass files
-- uncss your css files if you want to
 - Separate Admin/Login and Main theme WP css and js files
 - Minimize and concatenate your javascript files, differentiating between your head and footer scripts
 - Work with browsersync live reloading all of your scss and js changes
@@ -86,6 +84,8 @@ v0.7
 *******
 
 - Renamed functions
+- Removed Sussy and Juicy
+- Added Oniros-cli
 
 
 TODO
