@@ -25,7 +25,7 @@
     "prewatch:main": "exec-notify echo Watching and serving main WP theme static files.",
     "prewatch:all": "exec-notify echo Watching and serving all WP theme static files, including Login Area files.",
     "watch:all": "parallelshell 'npm run watch:all:css' 'npm run watch:js'",
-    "prebuild:main:all": "exec-notify echo Building all Main project files: CSS & JavaScript",
+    "prebuild:main:all": "exec-notify echo Building all Main project files: CSS and JavaScript",
     "build:main:all": "parallelshell 'npm run main:build:js' 'npm run main:build:css' ",
     "postbuild:main:all": "exec-notify echo All items build except for the Login files.",
     "prebuild:all": "exec-notify echo Building all project files: CSS, JavaScript, Generating Favicons and optimizing images",

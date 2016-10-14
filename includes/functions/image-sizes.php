@@ -4,7 +4,7 @@
 add_action( 'init', 'oniros_image_support' );
 function oniros_image_support(){
 
-	add_theme_support( 'post-thumbnails' );
+	
 
 	// Just add an image name, the width, the height, and a boolean that defines if WP should crop the images or not
 	// add as many as the project might require
