@@ -13,7 +13,7 @@ function oniros_scripts(){
 	if( !WP_DEBUG ) {
 		
 		// Our own stylesheet (minimized)
-		wp_enqueue_style('app', get_stylesheet_directory_uri().'/dist/css/main.min.css');	
+		wp_enqueue_style('app', get_stylesheet_directory_uri().'/dist/css/main/main.min.css');	
 		
 		// Own script (uglyfied)
 		wp_enqueue_script('main',get_stylesheet_directory_uri().'/dist/js/app.min.js', array('jquery'), null, true);
@@ -23,7 +23,7 @@ function oniros_scripts(){
 	} else{
 		
 		// Our own stylesheet 
-		wp_enqueue_style('app', get_stylesheet_directory_uri().'/dist/css/main.css');	
+		wp_enqueue_style('app', get_stylesheet_directory_uri().'/dist/css/main/main.css');	
 		
 		// Own script 
 		wp_enqueue_script('main',get_stylesheet_directory_uri().'/dist/js/app.js', array('jquery'), null, true);

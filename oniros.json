@@ -1,5 +1,8 @@
 {
-    "cpts": [],
+    "cpts": [{
+        "name": "pelota",
+        "slug": "pelotas"
+    }],
     "pages": [],
     "taxonomies": []
 }

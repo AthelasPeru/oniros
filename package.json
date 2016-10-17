@@ -39,12 +39,12 @@
     "oniros": "oniros"
   },
   "repository": {
-    "type": "git",
-    "url": ""
+    "url": "https://ondoheer@github.com/AthelasPeru/oniros",
+    "type": "git"
   },
   "author": "Athelas Peru",
   "license": "Apache-2.0",
-  "devDependencies": {    
+  "devDependencies": {
     "autoprefixer": "^6.3.3",
     "browser-sync": "^2.11.1",
     "cli-real-favicon": "0.0.5",
