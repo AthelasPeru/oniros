@@ -44,8 +44,10 @@ require_once("includes/functions/posttypes.php");
 // Define imagesizes the project needs to add to WP
 require_once("includes/functions/image-sizes.php");
 
+// frequently visited posts
+require_once("includes/functions/track_post_views.php");
 // Utilities
-require_once("includes/functions/utilities.php");
+//require_once("includes/functions/utilities.php");
 
 // Include Taxonomies
 require_once("includes/functions/taxonomies.php");
