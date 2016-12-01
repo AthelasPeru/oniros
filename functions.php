@@ -46,8 +46,9 @@ require_once("includes/functions/image-sizes.php");
 
 // frequently visited posts
 require_once("includes/functions/track_post_views.php");
-// Utilities
-//require_once("includes/functions/utilities.php");
+
+// Custom Gallery template
+require_once("includes/functions/gallery_custom.php");
 
 // Include Taxonomies
 require_once("includes/functions/taxonomies.php");
@@ -69,3 +70,6 @@ require_once("includes/functions/translation_strings.php");
 
 // Security
 require_once("includes/functions/security.php");
+
+// Utilities
+//require_once("includes/functions/utilities.php");
