@@ -7,6 +7,7 @@
   <meta charset="utf-8">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
+  <meta name="theme-color" content="#000000" />
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title><?php 
   // Hack to solve title not apearing on index templates
