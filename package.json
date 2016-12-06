@@ -16,7 +16,7 @@
     "login:autoprefixer": "postcss -u autoprefixer -r dist/css/login/*.css",
     "login:build:css": "npm run login:scss && npm run login:scss:min && npm run login:autoprefixer",
     "all:build:css": "parallelshell 'npm run main:build:css' 'npm run login:build:css' ",
-    "main:build:js": "mkdir -p dist/js && uglifyjs source/js/ajax-query.js source/js/app.js -m -c --name-cache /tmp/cache.json -o dist/js/app.min.js --lint --source-map dist/js/app.min.js.map",
+    "main:build:js": "mkdir -p dist/js && uglifyjs source/js/ajax-query.js source/js/main.js -m -c --name-cache /tmp/cache.json -o dist/js/main.min.js --lint --source-map dist/js/main.min.js.map",
     "imagemin": "mkdir -p dist/img && imagemin source/img dist/img -p",
     "favicon": "real-favicon generate faviconDescription.json faviconData.json .",
     "serve": "browser-sync start --server --files 'dist/css/**/*.css, dist/js/**/*.js' --index static_site/index.html",
