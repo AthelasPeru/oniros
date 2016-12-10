@@ -46,7 +46,7 @@ Login Page Customization
 
 //http://codex.wordpress.org/Plugin_API/Action_Reference/login_enqueue_scripts
 function oniros_login_css() {
-    wp_enqueue_style( 'oniros_login_css', get_template_directory_uri() . '/dist/css/login.min.css', false );
+    wp_enqueue_style( 'oniros_login_css', get_template_directory_uri() . '/dist/css/login/login.min.css', false );
 }
 
 // changing the logo link from wordpress.org to your site
