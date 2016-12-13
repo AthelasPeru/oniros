@@ -1,37 +1,8 @@
 <?php 
 
-// Add scripts and styles
-// feel free to uncomment those you won't use.
-function oniros_scripts(){
-	/*
-	We assume your development server has WP_DEBUG turned on and your production enviroment has it turned off
-	*/
 
-	// WP required stylesheet
-	wp_enqueue_style('base', get_stylesheet_directory_uri().'/style.css' );
-	
-	if( !WP_DEBUG ) {
-		
-		// Our own stylesheet (minimized)
-		wp_enqueue_style('main', get_stylesheet_directory_uri().'/dist/css/main/main.min.css');	
-		
-		// Own script (uglyfied)
-		wp_enqueue_script('main',get_stylesheet_directory_uri().'/dist/js/main.min.js', array('jquery'), null, true);
-		
-		//Add other scripts here
-
-	} else{
-		
-		// Our own stylesheet 
-		wp_enqueue_style('main', get_stylesheet_directory_uri().'/dist/css/main/main.css');	
-		
-		// Own script 
-		wp_enqueue_script('main',get_stylesheet_directory_uri().'/dist/js/main.js', array('jquery'), null, true);
-		
-		// Add other scripts here
-	}
-}
-add_action( 'wp_enqueue_scripts', 'oniros_scripts');
+//  Enque scripts and styles
+require_once("includes/functions/scripts_styles_loader.php");
 
 // Adds Ajax functionality defined for the Ajax endpoint
 require_once("includes/functions/ajax.php");

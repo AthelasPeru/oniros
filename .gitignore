@@ -1,6 +1,7 @@
 ###############
 # Athelas theme
 #################
+
 *.jar
 sftp-config.json
 .phpintel/
