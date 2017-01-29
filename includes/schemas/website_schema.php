@@ -8,7 +8,7 @@
                 "@type":"person",
                 "name":"name of the author is it's required",
                 "description":"author description",
-                "email": "maud@buenviaje.pe"} ,
+                "email": "person@mail.pe"} ,
 		 "copyrightHolder": "Name of copyright holder",
 		 "creator": "bussiness creator",
 		 "url": "<?php echo site_url(); ?>",
