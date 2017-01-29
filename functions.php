@@ -1,6 +1,7 @@
 <?php 
 
-
+// theme support
+require_once("includes/functions/theme_support.php");
 //  Enque scripts and styles
 require_once("includes/functions/scripts_styles_loader.php");
 
