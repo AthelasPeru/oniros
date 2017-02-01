@@ -18,6 +18,7 @@
     "all:build:css": "parallelshell 'npm run main:build:css' 'npm run login:build:css' ",
     "main:transpile:js": "mkdir -p source/transpiled_js && browserify -v -d source/js/main.js -o source/transpiled_js/main.js",
     "main:build:js": "npm run main:transpile:js && mkdir -p dist/js && uglifyjs source/transpiled_js/main.js -m -c --name-cache /tmp/cache.json -o dist/js/main.min.js --lint --source-map dist/js/main.min.js.map",
+    "all:build:js":"parallelshell 'npm run main:build:js'",
     "imagemin": "mkdir -p dist/img && imagemin source/img dist/img -p",
     "favicon": "real-favicon generate faviconDescription.json faviconData.json .",
     "serve": "browser-sync start --server --files 'dist/css/**/*.css, dist/js/**/*.js' --index static_site/index.html",
