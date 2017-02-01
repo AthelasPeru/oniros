@@ -16,7 +16,8 @@
     "login:autoprefixer": "postcss -u autoprefixer -r dist/css/login/*.css",
     "login:build:css": "npm run login:scss && npm run login:scss:min && npm run login:autoprefixer",
     "all:build:css": "parallelshell 'npm run main:build:css' 'npm run login:build:css' ",
-    "main:build:js": "mkdir -p dist/js && uglifyjs source/js/ajax-query.js source/js/main.js -m -c --name-cache /tmp/cache.json -o dist/js/main.min.js --lint --source-map dist/js/main.min.js.map",
+    "main:transpile:js": "mkdir -p source/transpiled_js && browserify -v -d source/js/main.js -o source/transpiled_js/main.js",
+    "main:build:js": "npm run main:transpile:js && mkdir -p dist/js && uglifyjs source/transpiled_js/main.js -m -c --name-cache /tmp/cache.json -o dist/js/main.min.js --lint --source-map dist/js/main.min.js.map",
     "imagemin": "mkdir -p dist/img && imagemin source/img dist/img -p",
     "favicon": "real-favicon generate faviconDescription.json faviconData.json .",
     "serve": "browser-sync start --server --files 'dist/css/**/*.css, dist/js/**/*.js' --index static_site/index.html",
@@ -36,7 +37,18 @@
     "postbuild:all": "exec-notify echo All items build, maybe it would be a goog time to build the project zip? Remeber, its just npm run zip",
     "zip": "bestzip oniros.zip *.php includes dist bower_components style.css screenshot.png",
     "postzip": "exec-notify echo Theme zip completed",
-    "oniros": "oniros"
+    "oniros": "oniros",
+    "clean": "rm -rf dist && rm -rf source/transpiled",
+    "postclean": "exec-notify echo Compiled directories deleted"
+  },
+  "browserify": {
+    "transform": [
+      ["babelify", {
+        "presets": ["es2015"],
+        "sourceMap": true,
+        "sourceMapRelative": "."
+      }]
+    ]
   },
   "repository": {
     "url": "https://ondoheer@github.com/AthelasPeru/oniros",
@@ -46,7 +58,11 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "autoprefixer": "^6.3.3",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babelify": "^7.3.0",
     "browser-sync": "^2.11.1",
+    "browserify": "^14.0.0",
     "cli-real-favicon": "0.0.5",
     "exec-notify": "^0.1.3",
     "imagemin-cli": "^2.1.0",
