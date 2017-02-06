@@ -5,6 +5,8 @@
 		Here you can keep general information updated.  
 	</p>
 	
+	<?php settings_errors(); ?>
+	
 	<div class="widget-liquid-left">
 		<div class="card">
 			
