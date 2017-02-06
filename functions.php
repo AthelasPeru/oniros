@@ -5,7 +5,7 @@ require_once("includes/functions/theme_support.php");
 //  Enque scripts and styles
 require_once("includes/functions/scripts_styles_loader.php");
 // Custom options panel
-require_once("includes/options/theme_settings/main.php");
+require_once("includes/options/general_information/main.php");
 
 // Adds Ajax functionality defined for the Ajax endpoint
 require_once("includes/functions/ajax.php");
