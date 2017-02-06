@@ -53,12 +53,12 @@ function display_theme_panel_location()
 	add_settings_field("city", "City", "display_city_element", "theme-options-location", "location-links");
 	add_settings_field("country", "Country", "display_country_element", "theme-options-location", "location-links");
 
-    register_setting("location-links", "google_maps_url");
     register_setting("location-links", "address");
     register_setting("location-links", "district");
     register_setting("location-links", "postal_code");
     register_setting("location-links", "city");
     register_setting("location-links", "country");
+    register_setting("location-links", "google_maps_url");
     
 }
 
@@ -66,6 +66,6 @@ function display_theme_panel_location()
 function display_location_section_instructions(){
 
 ?>
-    <p class="description">Copy the link to a google maps location. This will be used to direct the website visitors to that link when clicking on your address.</p>
+    <p class="description">Your Business Information. It will be used to show your business address and compose direct links to your location on the website and schema markups.</p>
 
 <?php  } ?>
