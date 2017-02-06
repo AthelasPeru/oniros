@@ -46,12 +46,12 @@ function display_theme_panel_location()
 {
 	add_settings_section("location-links", "Location", "display_location_section_instructions", "theme-options-location");
 	
-    add_settings_field("google_maps_url", "Google Map Url", "display_google_maps_element", "theme-options-location", "location-links");
 	add_settings_field("address", "Address", "display_address_element", "theme-options-location", "location-links");
 	add_settings_field("district", "District", "display_district_element", "theme-options-location", "location-links");
 	add_settings_field("postal_code", "Postal Code", "display_postal_code_element", "theme-options-location", "location-links");
 	add_settings_field("city", "City", "display_city_element", "theme-options-location", "location-links");
 	add_settings_field("country", "Country", "display_country_element", "theme-options-location", "location-links");
+    add_settings_field("google_maps_url", "Google Map Url", "display_google_maps_element", "theme-options-location", "location-links");
 
     register_setting("location-links", "address");
     register_setting("location-links", "district");
