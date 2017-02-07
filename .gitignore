@@ -5,6 +5,7 @@ source/transpiled_js/
 *.jar
 sftp-config.json
 .phpintel/
+includes/options/web_customization
 bower_components/
 node_modules/
 dist/

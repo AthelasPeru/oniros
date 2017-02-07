@@ -11,12 +11,12 @@ add_action("admin_menu", "add_theme_menu_item");
 // Define the page HTML
 function general_information_page(){
 	
-	include("form.php");
+	include_once("form.php");
 }
 
-// Include Field creating functions
-include("social_links/input_fields.php");
-include("location/input_fields.php");
+// Include_once Field creating functions
+include_once("social_links/input_fields.php");
+include_once("location/input_fields.php");
 
 // Attach and execute previously imported functions to create andregister
 // the input fields to the form sections
@@ -24,4 +24,6 @@ add_action("admin_init", "display_theme_panel_social_links");
 add_action("admin_init", "display_theme_panel_location");
 
 
-
+// This is the way you can print any option value.
+// get_option( $option, $default ) Example:
+// echo get_option('phone', '456-44444');
