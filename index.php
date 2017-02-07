@@ -12,4 +12,6 @@
 
 get_header(); ?>
 
+<?php //echo get_option('phone', '456-44444'); ?>
+
 <?php get_footer(); ?> 
