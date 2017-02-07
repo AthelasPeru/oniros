@@ -109,7 +109,9 @@ function mdu_validate_image_size( $file ) {
 			$type = get_post_type($_REQUEST['post_id']); // $_REQUEST['post_id'] post id the image uploads to
 			// for custom post types we define a valid image ratio
 			if($type == "post"){
-				if(!ratio_validator($image, 1.5, 0.02)){
+				$ratio = 1.5;
+				$range = 0.02;
+				if(!ratio_validator($image, $ratio, $range)){
 					$file["error"] = "Wrong image ratio, ratio should be: " . $ratio;
 					return $file;
 				} 
