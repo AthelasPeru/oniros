@@ -104,21 +104,7 @@ function mdu_validate_image_size( $file ) {
 	
 	$image = getimagesize($file['tmp_name']);
 	if($image){
-		// validate for specific custom post types
-		if(isset($_REQUEST["post_id"])){
-			$type = get_post_type($_REQUEST['post_id']); // $_REQUEST['post_id'] post id the image uploads to
-			// for custom post types we define a valid image ratio
-			if($type == "post"){
-				$ratio = 1.5;
-				$range = 0.02;
-				if(!ratio_validator($image, $ratio, $range)){
-					$file["error"] = "Wrong image ratio, ratio should be: " . $ratio;
-					return $file;
-				} 
-				return $file;
-			}
-		}
-
+		
 		$minimum = array(
 		    'width' => '100',
 		    'height' => '100'
@@ -143,10 +129,26 @@ function mdu_validate_image_size( $file ) {
 		    $file['error'] = $too_large; 
 		    return $file;
 		}
+		// validate for specific custom post types
+		if(isset($_REQUEST["post_id"])){
+			$type = get_post_type($_REQUEST['post_id']); // $_REQUEST['post_id'] post id the image uploads to
+			// for custom post types we define a valid image ratio
+			if($type == "post"){
+				$ratio = 1.5;
+				$range = 0.02;
+				if(!ratio_validator($image, $ratio, $range)){
+					$min = $ratio - $range;
+					$max = $ratio + $range;
+					$file["error"] = "Wrong image ratio, ratio (width / height) should be between: " . $min . " - " . $max;
+					return $file;
+				} 
+				return $file; // return valid ratio file
+			}
+		}
 		else
-		    return $file;
+		    return $file; // returns valid image file that did not meet any other criteria
 	} else 
-		return $file;
+		return $file; // returns non image files
 	
     
 }
