@@ -76,22 +76,47 @@ function limit_image_sizes( $sizes ){
 			}
 		}
 		return $sizes;
-	} else 
+	} else {
  		return $sizes;
+	}
 	
 }
 
+function ratio_validator($image, $ratio, $range){
+	$current_ratio = $image[0] / $image[1];
+	$low_boundary = $ratio - $range;
+	$top_boundary = $ratio + $range;
+	if($current_ratio >= $low_boundary && $current_ratio <= $top_boundary){
+		return true;	
+	} else {
+	return false;
+	}
+}
+
+
+
+
+
 add_filter('wp_handle_upload_prefilter','mdu_validate_image_size');
 function mdu_validate_image_size( $file ) {
-	
+	// Write function that handles general theme max and min sizes
+	// write function that handles specific post type ratios
 	
 	$image = getimagesize($file['tmp_name']);
 	if($image){
-		write_log(array(
-			"type" => "POST",
-			"action" => "wp_handle_upload_prefilter",
-			"data" => $_POST
-		));
+		// validate for specific custom post types
+		if(isset($_REQUEST["post_id"])){
+			$type = get_post_type($_REQUEST['post_id']); // $_REQUEST['post_id'] post id the image uploads to
+			// for custom post types we define a valid image ratio
+			if($type == "post"){
+				if(!ratio_validator($image, 1.5, 0.02)){
+					$file["error"] = "Wrong image ratio, ratio should be: " . $ratio;
+					return $file;
+				} 
+				return $file;
+			}
+		}
+
 		$minimum = array(
 		    'width' => '100',
 		    'height' => '100'
@@ -123,3 +148,4 @@ function mdu_validate_image_size( $file ) {
 	
     
 }
+
