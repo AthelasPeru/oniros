@@ -37,13 +37,13 @@ function display_google_element()
 
 function display_theme_panel_social_links()
 {
-	add_settings_section("social-links", "Social Links", "display_social_section_instructions", "theme-options-social");
+	add_settings_section("social-links", "Social Links", "display_social_section_instructions", "general-info-social");
 	
-    add_settings_field("facebook_url", "Facebook Profile Url", "display_facebook_element", "theme-options-social", "social-links");
-	add_settings_field("twitter_url", "Twitter Profile Url", "display_twitter_element", "theme-options-social", "social-links");
-	add_settings_field("youtube_url", "Youtube Profile Url", "display_youtube_element", "theme-options-social", "social-links");
-	add_settings_field("instagram_url", "Instagram Profile Url", "display_instagram_element", "theme-options-social", "social-links");
-	add_settings_field("google_url", "Google+ Profile Url", "display_google_element", "theme-options-social", "social-links");
+    add_settings_field("facebook_url", "Facebook Profile Url", "display_facebook_element", "general-info-social", "social-links");
+	add_settings_field("twitter_url", "Twitter Profile Url", "display_twitter_element", "general-info-social", "social-links");
+	add_settings_field("youtube_url", "Youtube Profile Url", "display_youtube_element", "general-info-social", "social-links");
+	add_settings_field("instagram_url", "Instagram Profile Url", "display_instagram_element", "general-info-social", "social-links");
+	add_settings_field("google_url", "Google+ Profile Url", "display_google_element", "general-info-social", "social-links");
 
     register_setting("social-links", "twitter_url");
     register_setting("social-links", "facebook_url");

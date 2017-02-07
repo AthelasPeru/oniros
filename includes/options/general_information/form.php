@@ -15,7 +15,7 @@
 			        settings_fields("social-links");
 			        
 			        // Define a group name for the subsections
-			        do_settings_sections("theme-options-social");      
+			        do_settings_sections("general-info-social");      
 			        submit_button(); 
 			    ?>          
 			</form>
@@ -29,7 +29,7 @@
 			        
 			        settings_fields("location-links");
 			        // Define a group name for the subsections
-			        do_settings_sections("theme-options-location");      
+			        do_settings_sections("general-info-location");      
 			        submit_button(); 
 			    ?>          
 			</form>

@@ -46,4 +46,4 @@ require_once("includes/functions/translation_strings.php");
 require_once("includes/functions/security.php");
 
 // Utilities
-//require_once("includes/functions/utilities.php");
+require_once("includes/functions/utilities.php");
