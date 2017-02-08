@@ -29,7 +29,12 @@
 		<div class="card" style="max-width:100%;">
 			
 			<div  name="debug-log" id="debug-log">
-	    		<?php echo $log_content; ?>
+				<pre>
+					<code>
+						<?php print_r($log_content); ?>
+					</code>
+				</pre>
+	    		
 	    	</div>
 			           
 		
