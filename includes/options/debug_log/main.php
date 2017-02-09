@@ -14,4 +14,14 @@ function debug_log_panel(){
 	include_once("panel.php");
 }
 
-
+add_action( 'admin_post_clear_log', 'clear_log_file' );
+function clear_log_file()
+{
+    // Do your stuff here
+    $log_file = get_home_path() . "wp-content/debug.log";
+	if(file_exists($log_file)){
+		file_put_contents($log_file, "Log cleared --- " . date('m/d/Y h:i:s a', time()) . " --- Log cleared");
+	}
+    wp_redirect( $_SERVER['HTTP_REFERER'] );
+    exit();
+}
