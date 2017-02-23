@@ -1,12 +1,12 @@
 <?php 
 
 // Add themeoptions page to the admin sidebar
-function add_theme_menu_item()
+function add_theme_general_info_panel()
 {
 	add_menu_page("General Information", "General Information", "manage_options", "general-info", "general_information_page", null, 99);
 }
 
-add_action("admin_menu", "add_theme_menu_item");
+add_action("admin_menu", "add_theme_general_info_panel");
 
 // Define the page HTML
 function general_information_page(){
