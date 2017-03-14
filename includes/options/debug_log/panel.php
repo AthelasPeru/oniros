@@ -57,8 +57,8 @@
 		
 		</div>
 
-		<form action="delete-log.php">
-			
+		<form method="POST" action="<?php echo admin_url( 'admin-post.php' ); ?>">
+			<input type="hidden" name="action" value="clear_log" />
 			<input class="button button-primary" type="submit" name="delete-log" value="Delete Log">
 
 		</form>
