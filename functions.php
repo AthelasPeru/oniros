@@ -48,3 +48,6 @@ require_once("includes/functions/security.php");
 
 // Utilities
 require_once("includes/functions/utilities.php");
+
+//Handle upload
+require_once( 'includes/options/options.php' );
