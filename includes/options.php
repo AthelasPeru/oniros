@@ -23,10 +23,10 @@ function athelas_options_init() {
 add_action( 'after_setup_theme', 'athelas_options_init' );
 
 
-// Add "Imágenes Generales" link to the "Appearance" menu
+// Add "Logo" link to the "Appearance" menu
 function athelas_menu_options() {
     // add_theme_page( $page_title, $menu_title, $capability, $menu_slug, $function);
-    add_theme_page('Imágenes Generales', 'Imágenes Generales', 'edit_theme_options', 'athelas-settings', 'athelas_admin_options_page');
+    add_theme_page('Logo', 'Logo', 'edit_theme_options', 'athelas-settings', 'athelas_admin_options_page');
 }
 // Load the Admin Options page
 add_action('admin_menu', 'athelas_menu_options');
@@ -40,7 +40,7 @@ function athelas_admin_options_page() {
  
             <div id="icon-themes" class="icon32"><br /></div>
  
-            <h2><?php _e( 'Imágenes Generales', 'athelas' ); ?></h2>
+            <h2><?php _e( 'Logo', 'athelas' ); ?></h2>
  
             <!-- If we have any error by submiting the form, they will appear here -->
             <?php settings_errors( 'athelas-settings-errors' ); ?>
@@ -53,8 +53,8 @@ function athelas_admin_options_page() {
                 ?>
  
                 <p class="submit">
-                    <input name="theme_athelas_options[submit]" id="submit_options_form" type="submit" class="button-primary" value="<?php esc_attr_e('Guardar cambios', 'athelas'); ?>" />
-                    <input name="theme_athelas_options[reset]" type="submit" class="button-secondary" value="<?php esc_attr_e('Limpiar campos', 'athelas'); ?>" />
+                    <input name="theme_athelas_options[submit]" id="submit_options_form" type="submit" class="button-primary" value="<?php esc_attr_e('Save Changes', 'athelas'); ?>" />
+                    <input name="theme_athelas_options[reset]" type="submit" class="button-secondary" value="<?php esc_attr_e('Clear Fields', 'athelas'); ?>" />
                 </p>
  
             </form>
@@ -67,7 +67,7 @@ function athelas_options_settings_init() {
     register_setting( 'theme_athelas_options', 'theme_athelas_options', 'athelas_options_validate' );
  
     // Add a form section for the Logo
-    add_settings_section('athelas_settings_header', __( 'Opciones de imágenes generales', 'athelas' ), 'athelas_settings_header_text', 'athelas');
+    add_settings_section('athelas_settings_header', __( 'Logo options', 'athelas' ), 'athelas_settings_header_text', 'athelas');
  
     // Add Logo uploader
     add_settings_field('athelas_setting_logo',  __( 'Logo', 'athelas' ), 'athelas_setting_logo', 'athelas', 'athelas_settings_header');
@@ -79,7 +79,7 @@ add_action( 'admin_init', 'athelas_options_settings_init' );
  
 function athelas_settings_header_text() {
     ?>
-        <p><?php _e( 'Aquí se pueden manejar las imágenes generales del sitio.', 'athelas' ); ?></p>
+        <p><?php _e( 'Handle website Logo.', 'athelas' ); ?></p>
     <?php
 }
  
@@ -89,9 +89,9 @@ function athelas_setting_logo() {
         <input type="text" id="logo_url" name="theme_athelas_options[logo]" value="<?php echo esc_url( $athelas_options['logo'] ); ?>" />
         <input id="upload_logo_button" type="button" class="button" value="<?php _e( 'Subir Logo', 'athelas' ); ?>" />
         <?php if ( '' != $athelas_options['logo'] ): ?>
-            <input id="delete_logo_button" name="theme_athelas_options[delete_logo]" type="submit" class="button" value="<?php _e( 'Eliminar Logo', 'athelas' ); ?>" />
+            <input id="delete_logo_button" name="theme_athelas_options[delete_logo]" type="submit" class="button" value="<?php _e( 'Delete Logo', 'athelas' ); ?>" />
         <?php endif; ?>
-        <span class="description"><?php _e('Sube aquí una imagen para el logo.', 'athelas' ); ?></span>
+        <span class="description"><?php _e('Upload an image for the website logo.', 'athelas' ); ?></span>
     <?php
 }
 
