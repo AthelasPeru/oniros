@@ -13,7 +13,7 @@ add_filter( 'style_loader_src', 'remove_cssjs_ver', 10, 2 );
 add_filter( 'script_loader_src', 'remove_cssjs_ver', 10, 2 );
 
 
-//Enabling upload of svg files
+//Enabling upload of svg files.
 add_filter('upload_mimes', 'my_upload_mimes');
  
 function my_upload_mimes($mimes = array()) {
