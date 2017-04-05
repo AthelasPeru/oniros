@@ -1,7 +1,7 @@
 Documentation
 +++++++++++++++++
 
-`READ THE DOCUMENTATION HERE <http://www.athelas.pe/oniros>`_
+`READ THE DOCUMENTATION HERE <//oniros.athelas.pe>`_
 
 What is Oniros?
 ++++++++++++++++++
