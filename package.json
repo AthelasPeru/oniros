@@ -9,16 +9,16 @@
     "postfonts": "exec-notify echo Copied fonts from source to dist",
     "main:scss": "mkdir -p dist/css/main && node-sass --output-style nested --indent-type tab --indent-width 1 --source-map true -o dist/css/main source/scss/main/main.scss",
     "main:scss:min": "mkdir -p dist/css/main && node-sass --output-style compressed source/scss/main/main.scss > dist/css/main/main.min.css",
-    "main:autoprefixer": "postcss -u autoprefixer -r dist/css/main/*.css",
-    "main:build:css": "npm run main:scss && npm run main:scss:min && npm run main:autoprefixer",
+    "main:postcss": "postcss -u  css-mqpacker autoprefixer -r dist/css/main/*.css",
+    "main:build:css": "npm run main:scss && npm run main:scss:min && npm run main:postcss",
     "login:scss": "mkdir -p dist/css/login && node-sass --output-style nested --indent-type tab --indent-width 1 --source-map true -o dist/css/login source/scss/login/login.scss",
     "login:scss:min": "mkdir -p dist/css/login && node-sass --output-style compressed source/scss/login/login.scss > dist/css/login/login.min.css",
-    "login:autoprefixer": "postcss -u autoprefixer -r dist/css/login/*.css",
-    "login:build:css": "npm run login:scss && npm run login:scss:min && npm run login:autoprefixer",
+    "login:postcss": "postcss -u css-mqpacker autoprefixer -r dist/css/login/*.css",
+    "login:build:css": "npm run login:scss && npm run login:scss:min && npm run login:postcss",
     "all:build:css": "parallelshell 'npm run main:build:css' 'npm run login:build:css' ",
     "main:transpile:js": "mkdir -p source/transpiled_js && browserify -v -d source/js/main.js -o source/transpiled_js/main.js",
     "main:build:js": "npm run main:transpile:js && mkdir -p dist/js && uglifyjs source/transpiled_js/main.js -m -c --name-cache /tmp/cache.json -o dist/js/main.min.js --lint --source-map dist/js/main.min.js.map",
-    "all:build:js":"parallelshell 'npm run main:build:js'",
+    "all:build:js": "parallelshell 'npm run main:build:js'",
     "imagemin": "mkdir -p dist/img && imagemin source/img dist/img -p",
     "favicon": "real-favicon generate faviconDescription.json faviconData.json .",
     "serve": "browser-sync start --server --files 'dist/css/**/*.css, dist/js/**/*.js' --index static_site/index.html",
@@ -44,11 +44,16 @@
   },
   "browserify": {
     "transform": [
-      ["babelify", {
-        "presets": ["es2015"],
-        "sourceMap": true,
-        "sourceMapRelative": "."
-      }]
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ],
+          "sourceMap": true,
+          "sourceMapRelative": "."
+        }
+      ]
     ]
   },
   "repository": {
@@ -65,6 +70,7 @@
     "browser-sync": "^2.11.1",
     "browserify": "^14.0.0",
     "cli-real-favicon": "0.0.5",
+    "css-mqpacker": "^5.0.1",
     "exec-notify": "^0.1.3",
     "imagemin-cli": "^2.1.0",
     "node-sass": "^3.4.2",

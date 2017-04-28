@@ -12,3 +12,20 @@
 		"components/mobile-menu",
 		"components/header",		
 		"components/footer";
+
+
+body{
+	background-color: #f90;
+	@media screen and (max-width: 960px){
+		background-color: #ff0;
+	}
+}
+
+h1{
+	font-size: 90px;
+	@media screen and (max-width: 960px){
+		font-size: 30px;
+		color: #00f;
+		text-decoration: underline;
+	}
+}
