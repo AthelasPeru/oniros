@@ -22,9 +22,6 @@ require_once("includes/functions/image-sizes.php");
 // frequently visited posts
 require_once("includes/functions/track_post_views.php");
 
-// Custom Gallery template
-require_once("includes/functions/gallery_custom.php");
-
 // Include Taxonomies
 require_once("includes/functions/taxonomies.php");
 
